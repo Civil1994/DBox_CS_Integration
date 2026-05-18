@@ -1,0 +1,11 @@
+# Secrets
+cs-translationapiproj-321d0950989b.json
+
+# Visual Studio
+.vs/
+bin/
+obj/
+
+# User files
+*.user
+*.suo

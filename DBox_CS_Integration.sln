@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBox_CS.Core", "DBox_CS.Core\DBox_CS.Core.csproj", "{2B236854-87AE-4C41-8FCD-D38AF8440A16}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBox_CS.WebAPI", "DBox_CS.WebAPI\DBox_CS.WebAPI.csproj", "{6F560B34-C943-473C-B625-13F5B95BE58A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B236854-87AE-4C41-8FCD-D38AF8440A16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B236854-87AE-4C41-8FCD-D38AF8440A16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B236854-87AE-4C41-8FCD-D38AF8440A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B236854-87AE-4C41-8FCD-D38AF8440A16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F560B34-C943-473C-B625-13F5B95BE58A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F560B34-C943-473C-B625-13F5B95BE58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F560B34-C943-473C-B625-13F5B95BE58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F560B34-C943-473C-B625-13F5B95BE58A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E34E8723-5901-4573-806A-D3C984E3C63A}
+	EndGlobalSection
+EndGlobal

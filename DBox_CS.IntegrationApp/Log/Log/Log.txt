@@ -1,0 +1,718 @@
+﻿2024-12-19 01:26:05 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-19 01:26:03 PM	Employee record with EmpCode 11571428 inserted.
+2024-12-19 01:26:03 PM	Employee record with EmpCode 11571427 inserted.
+2024-12-19 01:26:03 PM	Employee record with EmpCode 11571426 inserted.
+2024-12-19 01:26:03 PM	Employee record with EmpCode 11571425 inserted.
+2024-12-19 01:26:03 PM	Employee record with EmpCode 11571424 inserted.
+2024-12-19 01:26:03 PM	Employee record with EmpCode 11571423 inserted.
+2024-12-19 01:26:03 PM	Employee record with EmpCode 11571422 inserted.
+2024-12-19 01:26:03 PM	Employee record with EmpCode 11571421 inserted.
+2024-12-19 01:26:03 PM	Status updated successfully to 'Processed and Inserted into Database' in SFIEmployeeInitialStaging.
+2024-12-19 01:26:03 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-19 01:26:02 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-19 01:20:09 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-19 01:20:06 PM	Employee record with EmpCode 11571420 updated.
+2024-12-19 01:20:02 PM	Employee record with EmpCode 11571419 updated.
+2024-12-19 01:19:46 PM	Employee record with EmpCode 11571418 updated.
+2024-12-19 01:19:41 PM	Employee record with EmpCode 11571417 updated.
+2024-12-19 01:19:10 PM	Employee record with EmpCode 11571416 updated.
+2024-12-19 01:18:31 PM	Employee record with EmpCode 11571415 updated.
+2024-12-19 01:17:51 PM	Employee record with EmpCode 11571414 updated.
+2024-12-19 01:16:41 PM	Employee record with EmpCode 11571413 updated.
+2024-12-19 01:15:02 PM	Status updated successfully to 'Processed and Inserted into Database' in SFIEmployeeInitialStaging.
+2024-12-19 01:14:51 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-19 01:00:49 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-19 01:00:46 PM	Update failed for EmpCode: 11571420. Error: Incorrect syntax near the keyword 'WHERE'.
+2024-12-19 01:00:42 PM	Update failed for EmpCode: 11571419. Error: Incorrect syntax near the keyword 'WHERE'.
+2024-12-19 01:00:39 PM	Update failed for EmpCode: 11571418. Error: Incorrect syntax near the keyword 'WHERE'.
+2024-12-19 01:00:36 PM	Update failed for EmpCode: 11571417. Error: Incorrect syntax near the keyword 'WHERE'.
+2024-12-19 01:00:33 PM	Update failed for EmpCode: 11571416. Error: Incorrect syntax near the keyword 'WHERE'.
+2024-12-19 01:00:30 PM	Update failed for EmpCode: 11571415. Error: Incorrect syntax near the keyword 'WHERE'.
+2024-12-19 01:00:27 PM	Update failed for EmpCode: 11571414. Error: Incorrect syntax near the keyword 'WHERE'.
+2024-12-19 01:00:13 PM	Employee record with EmpCode 11571413 inserted.
+2024-12-19 12:58:33 PM	Status updated successfully to 'Processed and Inserted into Database' in SFIEmployeeInitialStaging.
+2024-12-19 12:58:14 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-19 12:58:11 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-19 12:46:12 PM	Status updated successfully to 'Processed and Inserted into Database' in SFIEmployeeInitialStaging.
+2024-12-19 12:46:09 PM	Error inserting row 16: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.SFIEmployeeInitialStaging'. The duplicate key value is (11571420).
+The statement has been terminated.
+2024-12-19 12:46:08 PM	Error inserting row 15: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.SFIEmployeeInitialStaging'. The duplicate key value is (11571419).
+The statement has been terminated.
+2024-12-19 12:46:07 PM	Error inserting row 14: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.SFIEmployeeInitialStaging'. The duplicate key value is (11571418).
+The statement has been terminated.
+2024-12-19 12:46:06 PM	Error inserting row 13: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.SFIEmployeeInitialStaging'. The duplicate key value is (11571417).
+The statement has been terminated.
+2024-12-19 12:46:05 PM	Error inserting row 12: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.SFIEmployeeInitialStaging'. The duplicate key value is (11571416).
+The statement has been terminated.
+2024-12-19 12:46:04 PM	Error inserting row 11: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.SFIEmployeeInitialStaging'. The duplicate key value is (11571415).
+The statement has been terminated.
+2024-12-19 12:46:01 PM	Error inserting row 10: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.SFIEmployeeInitialStaging'. The duplicate key value is (11571414).
+The statement has been terminated.
+2024-12-19 12:46:00 PM	Error inserting row 9: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.SFIEmployeeInitialStaging'. The duplicate key value is (11571413).
+The statement has been terminated.
+2024-12-19 12:46:00 PM	Status updated successfully to 'Processed and Inserted into Database' in SFIEmployeeInitialStaging.
+2024-12-19 12:45:46 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-19 12:45:40 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-19 12:45:40 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-19 12:26:08 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-19 12:26:07 PM	Employee record with EmpCode 11571417 inserted.
+2024-12-19 12:26:07 PM	Unable to fetch LocLib5 for CostCentreCode: AE51001411
+2024-12-19 12:26:06 PM	Employee record with EmpCode 11571420 inserted.
+2024-12-19 12:26:06 PM	Unable to fetch LocLib5 for CostCentreCode: MGMC419900
+2024-12-19 12:26:05 PM	Employee record with EmpCode 11571419 inserted.
+2024-12-19 12:26:05 PM	Unable to fetch LocLib5 for CostCentreCode: MGMC419900
+2024-12-19 12:26:04 PM	Employee record with EmpCode 11571418 inserted.
+2024-12-19 12:26:04 PM	Unable to fetch LocLib5 for CostCentreCode: MGMC419900
+2024-12-19 12:26:03 PM	Employee record with EmpCode 11571416 inserted.
+2024-12-19 12:26:03 PM	Unable to fetch LocLib5 for CostCentreCode: AE51003314
+2024-12-19 12:26:02 PM	Employee record with EmpCode 11571415 inserted.
+2024-12-19 12:26:02 PM	Unable to fetch LocLib5 for CostCentreCode: MGMC419900
+2024-12-19 12:26:00 PM	Employee record with EmpCode 11571414 inserted.
+2024-12-19 12:26:00 PM	Unable to fetch LocLib5 for CostCentreCode: MGMC419900
+2024-12-19 12:25:59 PM	Insert failed for EmpCode: 11571413. Error: Must declare the scalar variable "@LocLib5".
+2024-12-19 12:23:17 PM	Status updated successfully to 'Processed and Inserted into Database' in SFIEmployeeInitialStaging.
+2024-12-19 12:22:29 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-19 12:22:25 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 09:28:51 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 09:28:50 PM	Employee record with EmpCode 11571408 inserted.
+2024-12-18 09:28:50 PM	Employee record with EmpCode 11571407 inserted.
+2024-12-18 09:28:50 PM	Employee record with EmpCode 11571406 inserted.
+2024-12-18 09:28:50 PM	Employee record with EmpCode 11571405 inserted.
+2024-12-18 09:28:50 PM	Employee record with EmpCode 11571412 inserted.
+2024-12-18 09:28:50 PM	Employee record with EmpCode 11571411 inserted.
+2024-12-18 09:28:50 PM	Employee record with EmpCode 11571410 inserted.
+2024-12-18 09:28:50 PM	Employee record with EmpCode 11571409 inserted.
+2024-12-18 09:28:50 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 09:28:50 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 09:04:35 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 09:04:33 PM	Insert failed for EmpCode: 11571404. Error: Violation of PRIMARY KEY constraint 'PK_Photos_1'. Cannot insert duplicate key in object 'dbo.Photos'. The duplicate key value is (11571404.JPG, 1).
+The statement has been terminated.
+2024-12-18 09:04:33 PM	Insert failed for EmpCode: 11571403. Error: Violation of PRIMARY KEY constraint 'PK_Photos_1'. Cannot insert duplicate key in object 'dbo.Photos'. The duplicate key value is (11571403.JPG, 1).
+The statement has been terminated.
+2024-12-18 09:04:33 PM	Insert failed for EmpCode: 11571402. Error: Violation of PRIMARY KEY constraint 'PK_Photos_1'. Cannot insert duplicate key in object 'dbo.Photos'. The duplicate key value is (11571402.JPG, 1).
+The statement has been terminated.
+2024-12-18 09:04:33 PM	Insert failed for EmpCode: 11571401. Error: Violation of PRIMARY KEY constraint 'PK_Photos_1'. Cannot insert duplicate key in object 'dbo.Photos'. The duplicate key value is (11571401.JPG, 1).
+The statement has been terminated.
+2024-12-18 09:04:33 PM	Insert failed for EmpCode: 11571108. Error: Violation of PRIMARY KEY constraint 'PK_Photos_1'. Cannot insert duplicate key in object 'dbo.Photos'. The duplicate key value is (11571108.JPG, 1).
+The statement has been terminated.
+2024-12-18 09:04:33 PM	Insert failed for EmpCode: 11571109. Error: Violation of PRIMARY KEY constraint 'PK_Photos_1'. Cannot insert duplicate key in object 'dbo.Photos'. The duplicate key value is (11571109.JPG, 1).
+The statement has been terminated.
+2024-12-18 09:04:33 PM	Employee record with EmpCode 11571111 inserted.
+2024-12-18 09:04:33 PM	Employee record with EmpCode 11571107 inserted.
+2024-12-18 09:04:33 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 09:04:33 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 09:04:21 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 09:04:16 PM	Error during CSV data insertion: Error: An error occurred while reading the CSV file.
+2024-12-18 09:04:16 PM	Error reading CSV file at C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv. Details: The process cannot access the file 'C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv' because it is being used by another process.
+2024-12-18 09:04:16 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 09:04:15 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 08:51:17 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 08:51:16 PM	Employee record with EmpCode 11571404 inserted.
+2024-12-18 08:51:16 PM	Parameter: @SalProfile, Value: HOD, Length: 3
+2024-12-18 08:51:16 PM	Parameter: @Title, Value: 2, Length: 1
+2024-12-18 08:51:16 PM	Parameter: @WPS, Value: , Length: 0
+2024-12-18 08:51:16 PM	Parameter: @VisaExpDate, Value: 08/10/2027 12:00:00 AM, Length: 22
+2024-12-18 08:51:16 PM	Parameter: @PersEmail, Value:  permail8@xmail.com, Length: 19
+2024-12-18 08:51:16 PM	Parameter: @AuxString2, Value: MGMC419900, Length: 10
+2024-12-18 08:51:16 PM	Parameter: @LocLib5, Value: MGMC41990, Length: 9
+2024-12-18 08:51:16 PM	Parameter: @IntlJoiningDate, Value: 06/12/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:16 PM	Parameter: @StartDtofIndemnity, Value: 06/12/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:16 PM	Parameter: @Email, Value: business.uae@example.com, Length: 24
+2024-12-18 08:51:16 PM	Parameter: @SNameE, Value: SIT, Length: 3
+2024-12-18 08:51:16 PM	Parameter: @FNameE, Value: UAECS, Length: 5
+2024-12-18 08:51:16 PM	Parameter: @SponsorCode, Value: 16, Length: 2
+2024-12-18 08:51:16 PM	Parameter: @ResExpDate, Value: 08/10/2026 12:00:00 AM, Length: 22
+2024-12-18 08:51:16 PM	Parameter: @ResidenceNo, Value: ResidenceNo8, Length: 12
+2024-12-18 08:51:16 PM	Parameter: @EntryDate, Value: 06/12/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:16 PM	Parameter: @ImmigFileNo, Value: ImmigFileNo8, Length: 12
+2024-12-18 08:51:16 PM	Parameter: @VisaIssueDate, Value: 08/10/2023 12:00:00 AM, Length: 22
+2024-12-18 08:51:16 PM	Parameter: @VisaNo, Value: VisaNo8, Length: 7
+2024-12-18 08:51:16 PM	Parameter: @CountryOfBirth, Value: 556, Length: 3
+2024-12-18 08:51:16 PM	Parameter: @DateOfBirth, Value: 02/12/1991, Length: 10
+2024-12-18 08:51:16 PM	Parameter: @PExpiryDate, Value: 07/12/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:16 PM	Parameter: @PIssueDate, Value: 08/10/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:16 PM	Parameter: @PassportNoE, Value: Passno7, Length: 7
+2024-12-18 08:51:16 PM	Parameter: @Npresent, Value: 556, Length: 3
+2024-12-18 08:51:16 PM	Parameter: @MaritalStat, Value: 2, Length: 1
+2024-12-18 08:51:16 PM	Parameter: @Sex, Value: 2, Length: 1
+2024-12-18 08:51:16 PM	Parameter: @FamilyNameE, Value: EmployeeC, Length: 9
+2024-12-18 08:51:16 PM	Parameter: @EmpNameE, Value: UAECS SIT EmployeeC, Length: 19
+2024-12-18 08:51:16 PM	Parameter: @EmpCode, Value: 11571404, Length: 8
+2024-12-18 08:51:15 PM	Employee record with EmpCode 11571403 inserted.
+2024-12-18 08:51:15 PM	Parameter: @SalProfile, Value: STF, Length: 3
+2024-12-18 08:51:15 PM	Parameter: @Title, Value: 1, Length: 1
+2024-12-18 08:51:15 PM	Parameter: @WPS, Value: , Length: 0
+2024-12-18 08:51:15 PM	Parameter: @VisaExpDate, Value: 07/10/2027 12:00:00 AM, Length: 22
+2024-12-18 08:51:15 PM	Parameter: @PersEmail, Value:  permail7@xmail.com, Length: 19
+2024-12-18 08:51:15 PM	Parameter: @AuxString2, Value: MGMC419900, Length: 10
+2024-12-18 08:51:15 PM	Parameter: @LocLib5, Value: MGMC41990, Length: 9
+2024-12-18 08:51:15 PM	Parameter: @IntlJoiningDate, Value: , Length: 0
+2024-12-18 08:51:15 PM	Parameter: @StartDtofIndemnity, Value: 03/12/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:15 PM	Parameter: @Email, Value: business.UAE@example.com, Length: 24
+2024-12-18 08:51:15 PM	Parameter: @SNameE, Value: EmployeeA, Length: 9
+2024-12-18 08:51:15 PM	Parameter: @FNameE, Value: INTUAE, Length: 6
+2024-12-18 08:51:15 PM	Parameter: @SponsorCode, Value: 9, Length: 1
+2024-12-18 08:51:15 PM	Parameter: @ResExpDate, Value: 07/10/2026 12:00:00 AM, Length: 22
+2024-12-18 08:51:15 PM	Parameter: @ResidenceNo, Value: ResidenceNo7, Length: 12
+2024-12-18 08:51:15 PM	Parameter: @EntryDate, Value: 03/12/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:15 PM	Parameter: @ImmigFileNo, Value: ImmigFileNo7, Length: 12
+2024-12-18 08:51:15 PM	Parameter: @VisaIssueDate, Value: 07/10/2023 12:00:00 AM, Length: 22
+2024-12-18 08:51:15 PM	Parameter: @VisaNo, Value: VisaNo7, Length: 7
+2024-12-18 08:51:15 PM	Parameter: @CountryOfBirth, Value: 556, Length: 3
+2024-12-18 08:51:15 PM	Parameter: @DateOfBirth, Value: 01/05/1990, Length: 10
+2024-12-18 08:51:15 PM	Parameter: @PExpiryDate, Value: 06/12/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:15 PM	Parameter: @PIssueDate, Value: 07/10/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:15 PM	Parameter: @PassportNoE, Value: Passno6, Length: 7
+2024-12-18 08:51:15 PM	Parameter: @Npresent, Value: 24, Length: 2
+2024-12-18 08:51:15 PM	Parameter: @MaritalStat, Value: 2, Length: 1
+2024-12-18 08:51:15 PM	Parameter: @Sex, Value: 1, Length: 1
+2024-12-18 08:51:15 PM	Parameter: @FamilyNameE, Value: Civilsoft, Length: 9
+2024-12-18 08:51:15 PM	Parameter: @EmpNameE, Value: INTUAE EmployeeA Civilsoft, Length: 26
+2024-12-18 08:51:15 PM	Parameter: @EmpCode, Value: 11571403, Length: 8
+2024-12-18 08:51:14 PM	Employee record with EmpCode 11571402 inserted.
+2024-12-18 08:51:14 PM	Parameter: @SalProfile, Value: MGMT, Length: 4
+2024-12-18 08:51:14 PM	Parameter: @Title, Value: 1, Length: 1
+2024-12-18 08:51:14 PM	Parameter: @WPS, Value: , Length: 0
+2024-12-18 08:51:14 PM	Parameter: @VisaExpDate, Value: 06/10/2027 12:00:00 AM, Length: 22
+2024-12-18 08:51:14 PM	Parameter: @PersEmail, Value:  permail6@xmail.com, Length: 19
+2024-12-18 08:51:14 PM	Parameter: @AuxString2, Value: MGMC419900, Length: 10
+2024-12-18 08:51:14 PM	Parameter: @LocLib5, Value: MGMC41990, Length: 9
+2024-12-18 08:51:14 PM	Parameter: @IntlJoiningDate, Value: , Length: 0
+2024-12-18 08:51:14 PM	Parameter: @StartDtofIndemnity, Value: 13/10/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:14 PM	Parameter: @Email, Value: corp.dl.ess.c2p-test57@dbschenker.com, Length: 37
+2024-12-18 08:51:14 PM	Parameter: @SNameE, Value: UATW1 SO EE1, Length: 12
+2024-12-18 08:51:14 PM	Parameter: @FNameE, Value: Jergen, Length: 6
+2024-12-18 08:51:14 PM	Parameter: @SponsorCode, Value: S04, Length: 3
+2024-12-18 08:51:14 PM	Parameter: @ResExpDate, Value: 06/10/2026 12:00:00 AM, Length: 22
+2024-12-18 08:51:14 PM	Parameter: @ResidenceNo, Value: ResidenceNo6, Length: 12
+2024-12-18 08:51:14 PM	Parameter: @EntryDate, Value: 13/10/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:14 PM	Parameter: @ImmigFileNo, Value: ImmigFileNo6, Length: 12
+2024-12-18 08:51:14 PM	Parameter: @VisaIssueDate, Value: 06/10/2023 12:00:00 AM, Length: 22
+2024-12-18 08:51:14 PM	Parameter: @VisaNo, Value: VisaNo6, Length: 7
+2024-12-18 08:51:14 PM	Parameter: @CountryOfBirth, Value: 407, Length: 3
+2024-12-18 08:51:14 PM	Parameter: @DateOfBirth, Value: 04/05/1994, Length: 10
+2024-12-18 08:51:14 PM	Parameter: @PExpiryDate, Value: 05/12/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:14 PM	Parameter: @PIssueDate, Value: 06/10/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:14 PM	Parameter: @PassportNoE, Value: Passno5, Length: 7
+2024-12-18 08:51:14 PM	Parameter: @Npresent, Value: 407, Length: 3
+2024-12-18 08:51:14 PM	Parameter: @MaritalStat, Value: 1, Length: 1
+2024-12-18 08:51:14 PM	Parameter: @Sex, Value: 1, Length: 1
+2024-12-18 08:51:14 PM	Parameter: @FamilyNameE, Value: Miller, Length: 6
+2024-12-18 08:51:14 PM	Parameter: @EmpNameE, Value: Jergen UATW1 SO EE1 Miller, Length: 26
+2024-12-18 08:51:14 PM	Parameter: @EmpCode, Value: 11571402, Length: 8
+2024-12-18 08:51:13 PM	Employee record with EmpCode 11571401 inserted.
+2024-12-18 08:51:13 PM	Parameter: @SalProfile, Value: STF, Length: 3
+2024-12-18 08:51:13 PM	Parameter: @Title, Value: 1, Length: 1
+2024-12-18 08:51:13 PM	Parameter: @WPS, Value: , Length: 0
+2024-12-18 08:51:13 PM	Parameter: @VisaExpDate, Value: 05/10/2027 12:00:00 AM, Length: 22
+2024-12-18 08:51:13 PM	Parameter: @PersEmail, Value:  permail5@xmail.com, Length: 19
+2024-12-18 08:51:13 PM	Parameter: @AuxString2, Value: AE51001411, Length: 10
+2024-12-18 08:51:13 PM	Parameter: @LocLib5, Value: AE5100141, Length: 9
+2024-12-18 08:51:13 PM	Parameter: @IntlJoiningDate, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:13 PM	Parameter: @StartDtofIndemnity, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:13 PM	Parameter: @Email, Value: corp.dl.ess.c2p-test106@dbschenker.com, Length: 38
+2024-12-18 08:51:13 PM	Parameter: @SNameE, Value: UATW1 SM MGR2, Length: 13
+2024-12-18 08:51:13 PM	Parameter: @FNameE, Value: Shawn, Length: 5
+2024-12-18 08:51:13 PM	Parameter: @SponsorCode, Value: S04, Length: 3
+2024-12-18 08:51:13 PM	Parameter: @ResExpDate, Value: 05/10/2026 12:00:00 AM, Length: 22
+2024-12-18 08:51:13 PM	Parameter: @ResidenceNo, Value: ResidenceNo5, Length: 12
+2024-12-18 08:51:13 PM	Parameter: @EntryDate, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:13 PM	Parameter: @ImmigFileNo, Value: ImmigFileNo5, Length: 12
+2024-12-18 08:51:13 PM	Parameter: @VisaIssueDate, Value: 05/10/2023 12:00:00 AM, Length: 22
+2024-12-18 08:51:13 PM	Parameter: @VisaNo, Value: VisaNo5, Length: 7
+2024-12-18 08:51:13 PM	Parameter: @CountryOfBirth, Value: 18, Length: 2
+2024-12-18 08:51:13 PM	Parameter: @DateOfBirth, Value: 14/04/1983, Length: 10
+2024-12-18 08:51:13 PM	Parameter: @PExpiryDate, Value: 04/12/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:13 PM	Parameter: @PIssueDate, Value: 05/10/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:13 PM	Parameter: @PassportNoE, Value: Passno4, Length: 7
+2024-12-18 08:51:13 PM	Parameter: @Npresent, Value: 18, Length: 2
+2024-12-18 08:51:13 PM	Parameter: @MaritalStat, Value: 1, Length: 1
+2024-12-18 08:51:13 PM	Parameter: @Sex, Value: 1, Length: 1
+2024-12-18 08:51:13 PM	Parameter: @FamilyNameE, Value: Lee, Length: 3
+2024-12-18 08:51:13 PM	Parameter: @EmpNameE, Value: Shawn UATW1 SM MGR2 Lee, Length: 23
+2024-12-18 08:51:12 PM	Parameter: @EmpCode, Value: 11571401, Length: 8
+2024-12-18 08:51:10 PM	Employee record with EmpCode 11571108 inserted.
+2024-12-18 08:51:10 PM	Parameter: @SalProfile, Value: STF, Length: 3
+2024-12-18 08:51:10 PM	Parameter: @Title, Value: 3, Length: 1
+2024-12-18 08:51:10 PM	Parameter: @WPS, Value: , Length: 0
+2024-12-18 08:51:10 PM	Parameter: @VisaExpDate, Value: 04/10/2027 12:00:00 AM, Length: 22
+2024-12-18 08:51:10 PM	Parameter: @PersEmail, Value:  permail4@xmail.com, Length: 19
+2024-12-18 08:51:10 PM	Parameter: @AuxString2, Value: AE51003314, Length: 10
+2024-12-18 08:51:10 PM	Parameter: @LocLib5, Value: AE5100331, Length: 9
+2024-12-18 08:51:10 PM	Parameter: @IntlJoiningDate, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:10 PM	Parameter: @StartDtofIndemnity, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:10 PM	Parameter: @Email, Value: faith.williams@dbschenker.com, Length: 29
+2024-12-18 08:51:10 PM	Parameter: @SNameE, Value: UATW1 SM MGR1, Length: 13
+2024-12-18 08:51:10 PM	Parameter: @FNameE, Value: Natalie, Length: 7
+2024-12-18 08:51:10 PM	Parameter: @SponsorCode, Value: S04, Length: 3
+2024-12-18 08:51:10 PM	Parameter: @ResExpDate, Value: 04/10/2026 12:00:00 AM, Length: 22
+2024-12-18 08:51:10 PM	Parameter: @ResidenceNo, Value: ResidenceNo4, Length: 12
+2024-12-18 08:51:10 PM	Parameter: @EntryDate, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:10 PM	Parameter: @ImmigFileNo, Value: ImmigFileNo4, Length: 12
+2024-12-18 08:51:10 PM	Parameter: @VisaIssueDate, Value: 04/10/2023 12:00:00 AM, Length: 22
+2024-12-18 08:51:10 PM	Parameter: @VisaNo, Value: VisaNo4, Length: 7
+2024-12-18 08:51:10 PM	Parameter: @CountryOfBirth, Value: 24, Length: 2
+2024-12-18 08:51:10 PM	Parameter: @DateOfBirth, Value: 21/01/1985, Length: 10
+2024-12-18 08:51:09 PM	Parameter: @PExpiryDate, Value: 03/12/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:09 PM	Parameter: @PIssueDate, Value: 04/10/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:09 PM	Parameter: @PassportNoE, Value: Passno3, Length: 7
+2024-12-18 08:51:08 PM	Parameter: @Npresent, Value: 5, Length: 1
+2024-12-18 08:51:08 PM	Parameter: @MaritalStat, Value: 1, Length: 1
+2024-12-18 08:51:08 PM	Parameter: @Sex, Value: 2, Length: 1
+2024-12-18 08:51:08 PM	Parameter: @FamilyNameE, Value: WilsonEgypt, Length: 11
+2024-12-18 08:51:08 PM	Parameter: @EmpNameE, Value: Natalie UATW1 SM MGR1 WilsonEgypt, Length: 33
+2024-12-18 08:51:06 PM	Parameter: @EmpCode, Value: 11571108, Length: 8
+2024-12-18 08:51:06 PM	Employee record with EmpCode 11571109 inserted.
+2024-12-18 08:51:06 PM	Parameter: @SalProfile, Value: STF, Length: 3
+2024-12-18 08:51:06 PM	Parameter: @Title, Value: 1, Length: 1
+2024-12-18 08:51:06 PM	Parameter: @WPS, Value: , Length: 0
+2024-12-18 08:51:06 PM	Parameter: @VisaExpDate, Value: 03/10/2027 12:00:00 AM, Length: 22
+2024-12-18 08:51:06 PM	Parameter: @PersEmail, Value:  permail3@xmail.com, Length: 19
+2024-12-18 08:51:06 PM	Parameter: @AuxString2, Value: MGMC419900, Length: 10
+2024-12-18 08:51:06 PM	Parameter: @LocLib5, Value: MGMC41990, Length: 9
+2024-12-18 08:51:05 PM	Parameter: @IntlJoiningDate, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:05 PM	Parameter: @StartDtofIndemnity, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:05 PM	Parameter: @Email, Value: corp.dl.ess.c2p-test83@dbschenker.com, Length: 37
+2024-12-18 08:51:05 PM	Parameter: @SNameE, Value: UATW1 SM EE2, Length: 12
+2024-12-18 08:51:05 PM	Parameter: @FNameE, Value: Anne, Length: 4
+2024-12-18 08:51:05 PM	Parameter: @SponsorCode, Value: S04, Length: 3
+2024-12-18 08:51:05 PM	Parameter: @ResExpDate, Value: 03/10/2026 12:00:00 AM, Length: 22
+2024-12-18 08:51:05 PM	Parameter: @ResidenceNo, Value: ResidenceNo3, Length: 12
+2024-12-18 08:51:05 PM	Parameter: @EntryDate, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:05 PM	Parameter: @ImmigFileNo, Value: ImmigFileNo3, Length: 12
+2024-12-18 08:51:05 PM	Parameter: @VisaIssueDate, Value: 03/10/2023 12:00:00 AM, Length: 22
+2024-12-18 08:51:05 PM	Parameter: @VisaNo, Value: VisaNo3, Length: 7
+2024-12-18 08:51:05 PM	Parameter: @CountryOfBirth, Value: 407, Length: 3
+2024-12-18 08:51:05 PM	Parameter: @DateOfBirth, Value: 31/08/1990, Length: 10
+2024-12-18 08:51:05 PM	Parameter: @PExpiryDate, Value: 02/12/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:05 PM	Parameter: @PIssueDate, Value: 03/10/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:05 PM	Parameter: @PassportNoE, Value: Passno2, Length: 7
+2024-12-18 08:51:05 PM	Parameter: @Npresent, Value: 407, Length: 3
+2024-12-18 08:51:05 PM	Parameter: @MaritalStat, Value: 1, Length: 1
+2024-12-18 08:51:05 PM	Parameter: @Sex, Value: 1, Length: 1
+2024-12-18 08:51:05 PM	Parameter: @FamilyNameE, Value: Eckstein, Length: 8
+2024-12-18 08:51:05 PM	Parameter: @EmpNameE, Value: Anne UATW1 SM EE2 Eckstein, Length: 26
+2024-12-18 08:51:05 PM	Parameter: @EmpCode, Value: 11571109, Length: 8
+2024-12-18 08:51:04 PM	Employee record with EmpCode 11571111 inserted.
+2024-12-18 08:51:04 PM	Parameter: @SalProfile, Value: STF, Length: 3
+2024-12-18 08:51:04 PM	Parameter: @Title, Value: 1, Length: 1
+2024-12-18 08:51:04 PM	Parameter: @WPS, Value: , Length: 0
+2024-12-18 08:51:04 PM	Parameter: @VisaExpDate, Value: 02/10/2027 12:00:00 AM, Length: 22
+2024-12-18 08:51:04 PM	Parameter: @PersEmail, Value:  permail2@xmail.com, Length: 19
+2024-12-18 08:51:04 PM	Parameter: @AuxString2, Value: MGMC419900, Length: 10
+2024-12-18 08:51:04 PM	Parameter: @LocLib5, Value: MGMC41990, Length: 9
+2024-12-18 08:51:04 PM	Parameter: @IntlJoiningDate, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:03 PM	Parameter: @StartDtofIndemnity, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:03 PM	Parameter: @Email, Value: corp.dl.ess.c2p-test81@dbschenker.com, Length: 37
+2024-12-18 08:51:02 PM	Parameter: @SNameE, Value: UATW1 MK EE2, Length: 12
+2024-12-18 08:51:02 PM	Parameter: @FNameE, Value: Silvia, Length: 6
+2024-12-18 08:51:02 PM	Parameter: @SponsorCode, Value: S02, Length: 3
+2024-12-18 08:51:02 PM	Parameter: @ResExpDate, Value: 02/10/2026 12:00:00 AM, Length: 22
+2024-12-18 08:51:02 PM	Parameter: @ResidenceNo, Value: ResidenceNo2, Length: 12
+2024-12-18 08:51:02 PM	Parameter: @EntryDate, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:01 PM	Parameter: @ImmigFileNo, Value: ImmigFileNo2, Length: 12
+2024-12-18 08:51:01 PM	Parameter: @VisaIssueDate, Value: 02/10/2023 12:00:00 AM, Length: 22
+2024-12-18 08:51:01 PM	Parameter: @VisaNo, Value: VisaNo2, Length: 7
+2024-12-18 08:51:00 PM	Parameter: @CountryOfBirth, Value: 407, Length: 3
+2024-12-18 08:51:00 PM	Parameter: @DateOfBirth, Value: 31/08/1990, Length: 10
+2024-12-18 08:51:00 PM	Parameter: @PExpiryDate, Value: 01/12/2024 12:00:00 AM, Length: 22
+2024-12-18 08:51:00 PM	Parameter: @PIssueDate, Value: 02/10/2024 12:00:00 AM, Length: 22
+2024-12-18 08:50:59 PM	Parameter: @PassportNoE, Value: Passno1, Length: 7
+2024-12-18 08:50:59 PM	Parameter: @Npresent, Value: 407, Length: 3
+2024-12-18 08:50:58 PM	Parameter: @MaritalStat, Value: 1, Length: 1
+2024-12-18 08:50:58 PM	Parameter: @Sex, Value: 1, Length: 1
+2024-12-18 08:50:57 PM	Parameter: @FamilyNameE, Value: Petrova, Length: 7
+2024-12-18 08:50:56 PM	Parameter: @EmpNameE, Value: Silvia UATW1 MK EE2 Petrova, Length: 27
+2024-12-18 08:50:54 PM	Parameter: @EmpCode, Value: 11571111, Length: 8
+2024-12-18 08:50:50 PM	Insert failed for EmpCode: 11571107. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 08:27:18 PM	Parameter: @SalProfile, Value: STF, Length: 3
+2024-12-18 08:27:16 PM	Parameter: @Title, Value: 3, Length: 1
+2024-12-18 08:27:13 PM	Parameter: @WPS, Value: , Length: 0
+2024-12-18 08:27:12 PM	Parameter: @VisaExpDate, Value: 01/10/2027 12:00:00 AM, Length: 22
+2024-12-18 08:27:10 PM	Parameter: @PersEmail, Value:  permail1@xmail.com, Length: 19
+2024-12-18 08:27:08 PM	Parameter: @AuxString2, Value: MGMC419900, Length: 10
+2024-12-18 08:27:07 PM	Parameter: @LocLib5, Value: MGMC419900, Length: 10
+2024-12-18 08:27:06 PM	Parameter: @IntlJoiningDate, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:27:05 PM	Parameter: @StartDtofIndemnity, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:26:57 PM	Parameter: @Email, Value: corp.dl.ess.c2p-test58@dbschenker.com, Length: 37
+2024-12-18 08:26:55 PM	Parameter: @SNameE, Value: UATW1 MK EE1, Length: 12
+2024-12-18 08:26:53 PM	Parameter: @FNameE, Value: Anja, Length: 4
+2024-12-18 08:26:52 PM	Parameter: @SponsorCode, Value: S03, Length: 3
+2024-12-18 08:26:51 PM	Parameter: @ResExpDate, Value: 01/10/2026 12:00:00 AM, Length: 22
+2024-12-18 08:26:50 PM	Parameter: @ResidenceNo, Value: ResidenceNo1, Length: 12
+2024-12-18 08:26:49 PM	Parameter: @EntryDate, Value: 01/01/2024 12:00:00 AM, Length: 22
+2024-12-18 08:26:48 PM	Parameter: @ImmigFileNo, Value: ImmigFileNo1, Length: 12
+2024-12-18 08:26:47 PM	Parameter: @VisaIssueDate, Value: 01/10/2023 12:00:00 AM, Length: 22
+2024-12-18 08:26:47 PM	Parameter: @VisaNo, Value: VisaNo1, Length: 7
+2024-12-18 08:26:46 PM	Parameter: @CountryOfBirth, Value: 407, Length: 3
+2024-12-18 08:26:45 PM	Parameter: @DateOfBirth, Value: 04/05/1994, Length: 10
+2024-12-18 08:26:16 PM	Parameter: @PExpiryDate, Value: 30/11/2024 12:00:00 AM, Length: 22
+2024-12-18 08:26:12 PM	Parameter: @PIssueDate, Value: 01/10/2024 12:00:00 AM, Length: 22
+2024-12-18 08:26:10 PM	Parameter: @PassportNoE, Value: cdfdt67898, Length: 10
+2024-12-18 08:26:08 PM	Parameter: @Npresent, Value: 407, Length: 3
+2024-12-18 08:26:07 PM	Parameter: @MaritalStat, Value: 1, Length: 1
+2024-12-18 08:26:06 PM	Parameter: @Sex, Value: 2, Length: 1
+2024-12-18 08:26:05 PM	Parameter: @FamilyNameE, Value: Klein, Length: 5
+2024-12-18 08:25:50 PM	Parameter: @EmpNameE, Value: Anja UATW1 MK EE1 Klein, Length: 23
+2024-12-18 08:25:34 PM	Parameter: @EmpCode, Value: 11571107, Length: 8
+2024-12-18 08:24:31 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 08:24:23 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 08:17:47 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 08:17:45 PM	Insert failed for EmpCode: 11571404. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 08:17:43 PM	Insert failed for EmpCode: 11571403. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 08:17:40 PM	Insert failed for EmpCode: 11571402. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 08:17:38 PM	Insert failed for EmpCode: 11571401. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 08:17:35 PM	Insert failed for EmpCode: 11571108. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 08:17:33 PM	Insert failed for EmpCode: 11571109. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 08:17:31 PM	Insert failed for EmpCode: 11571111. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 08:17:29 PM	Insert failed for EmpCode: 11571107. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 08:15:16 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 08:15:05 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 08:15:00 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 07:24:30 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 07:24:28 PM	Insert failed for EmpCode: 11571404. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 07:24:25 PM	Insert failed for EmpCode: 11571403. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 07:24:22 PM	Insert failed for EmpCode: 11571402. Error: The conversion of a nvarchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+2024-12-18 07:23:48 PM	Insert failed for EmpCode: 11571401. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 07:23:40 PM	Insert failed for EmpCode: 11571108. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 07:23:36 PM	Insert failed for EmpCode: 11571109. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 07:23:25 PM	Insert failed for EmpCode: 11571111. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 07:22:59 PM	Insert failed for EmpCode: 11571107. Error: The conversion of a nvarchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+2024-12-18 07:22:02 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 07:21:25 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 07:21:22 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 07:20:55 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 07:20:54 PM	Insert failed for EmpCode: 11571404. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 07:20:53 PM	Insert failed for EmpCode: 11571403. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 07:20:52 PM	Insert failed for EmpCode: 11571402. Error: The conversion of a nvarchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+2024-12-18 07:20:51 PM	Insert failed for EmpCode: 11571401. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 07:20:50 PM	Insert failed for EmpCode: 11571108. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 07:20:50 PM	Insert failed for EmpCode: 11571109. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 07:20:48 PM	Insert failed for EmpCode: 11571111. Error: String or binary data would be truncated.
+The statement has been terminated.
+2024-12-18 07:20:47 PM	Insert failed for EmpCode: 11571107. Error: Invalid column name 'NoticeDayByEmp'.
+Invalid column name 'NoticeDayByComp'.
+Invalid column name 'ProbPeriod'.
+Invalid column name 'WRKAGREETYPE'.
+Invalid column name 'WrkAgrStartDt'.
+Invalid column name 'WrkAgrEndDt'.
+2024-12-18 07:12:09 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 07:11:59 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 07:11:56 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 07:02:06 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 07:02:04 PM	Error processing row with EmpCode 11571404: Specified cast is not valid.
+2024-12-18 07:02:02 PM	Error processing row with EmpCode 11571403: Specified cast is not valid.
+2024-12-18 07:02:00 PM	Error processing row with EmpCode 11571402: Specified cast is not valid.
+2024-12-18 07:01:58 PM	Error processing row with EmpCode 11571401: Specified cast is not valid.
+2024-12-18 07:01:58 PM	Error processing row with EmpCode 11571108: Specified cast is not valid.
+2024-12-18 07:01:56 PM	Error processing row with EmpCode 11571109: Specified cast is not valid.
+2024-12-18 07:01:55 PM	Error processing row with EmpCode 11571111: Specified cast is not valid.
+2024-12-18 06:59:13 PM	Error processing row with EmpCode 11571107: Specified cast is not valid.
+2024-12-18 06:57:59 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 06:57:48 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 06:57:46 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 06:52:38 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 06:52:00 PM	Error processing row with EmpCode 11571404: Specified cast is not valid.
+2024-12-18 06:51:34 PM	Error processing row with EmpCode 11571403: Specified cast is not valid.
+2024-12-18 06:50:48 PM	Error processing row with EmpCode 11571402: Specified cast is not valid.
+2024-12-18 06:50:29 PM	Error processing row with EmpCode 11571401: Specified cast is not valid.
+2024-12-18 06:50:25 PM	Error processing row with EmpCode 11571108: Specified cast is not valid.
+2024-12-18 06:50:21 PM	Error processing row with EmpCode 11571109: Specified cast is not valid.
+2024-12-18 06:49:40 PM	Error processing row with EmpCode 11571111: Specified cast is not valid.
+2024-12-18 06:47:51 PM	Error processing row with EmpCode 11571107: Specified cast is not valid.
+2024-12-18 06:43:55 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 06:43:45 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 06:42:26 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 06:41:56 PM	No data found in EmployeeInitialStaging table.
+2024-12-18 06:41:47 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 06:41:34 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 06:41:23 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 06:41:18 PM	Error during CSV data insertion: Error: An error occurred while reading the CSV file.
+2024-12-18 06:41:15 PM	Error reading CSV file at C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv. Details: The process cannot access the file 'C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv' because it is being used by another process.
+2024-12-18 06:41:12 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 06:41:09 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 06:39:59 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 06:39:58 PM	Error processing row with EmpCode 11571404: Specified cast is not valid.
+2024-12-18 06:39:56 PM	Error processing row with EmpCode 11571403: Specified cast is not valid.
+2024-12-18 06:39:54 PM	Error processing row with EmpCode 11571402: Specified cast is not valid.
+2024-12-18 06:39:52 PM	Error processing row with EmpCode 11571401: Specified cast is not valid.
+2024-12-18 06:39:50 PM	Error processing row with EmpCode 11571108: Specified cast is not valid.
+2024-12-18 06:39:48 PM	Error processing row with EmpCode 11571109: Specified cast is not valid.
+2024-12-18 06:39:46 PM	Error processing row with EmpCode 11571111: Specified cast is not valid.
+2024-12-18 06:39:42 PM	Error processing row with EmpCode 11571107: Specified cast is not valid.
+2024-12-18 06:31:44 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 06:31:25 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 06:31:23 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 05:09:07 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 03:06:34 PM	
+2024-12-18 03:06:24 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 03:06:19 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 03:06:17 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 03:05:05 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 03:03:52 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 03:03:46 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 03:02:36 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 03:01:52 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 03:01:26 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 03:01:21 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 03:00:30 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 02:54:38 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 02:54:09 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 02:54:07 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 02:33:55 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 02:33:16 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 02:32:58 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 02:32:56 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 02:24:39 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 02:23:34 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 02:23:06 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 02:22:57 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 02:22:53 PM	Error during CSV data insertion: Error: An error occurred while reading the CSV file.
+2024-12-18 02:21:48 PM	Error reading CSV file at C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv. Details: The process cannot access the file 'C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv' because it is being used by another process.
+2024-12-18 02:21:41 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 02:21:38 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 02:17:58 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 02:08:56 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 02:08:29 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 02:06:58 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 02:06:04 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 02:05:04 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 02:04:58 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 01:17:04 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 01:14:49 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 01:14:48 PM	Error inserting row 16: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571404).
+The statement has been terminated.
+2024-12-18 01:14:48 PM	Error inserting row 15: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571403).
+The statement has been terminated.
+2024-12-18 01:14:48 PM	Error inserting row 14: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571402).
+The statement has been terminated.
+2024-12-18 01:14:48 PM	Error inserting row 13: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571401).
+The statement has been terminated.
+2024-12-18 01:14:47 PM	Error inserting row 12: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571108).
+The statement has been terminated.
+2024-12-18 01:14:47 PM	Error inserting row 11: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571109).
+The statement has been terminated.
+2024-12-18 01:14:46 PM	Error inserting row 10: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571111).
+The statement has been terminated.
+2024-12-18 01:14:46 PM	Error inserting row 9: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571107).
+The statement has been terminated.
+2024-12-18 01:14:46 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 01:14:36 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 01:14:36 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 01:09:58 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 01:09:55 PM	Error inserting row 16: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571404).
+The statement has been terminated.
+2024-12-18 01:09:53 PM	Error inserting row 15: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571403).
+The statement has been terminated.
+2024-12-18 01:09:52 PM	Error inserting row 14: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571402).
+The statement has been terminated.
+2024-12-18 01:09:50 PM	Error inserting row 13: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571401).
+The statement has been terminated.
+2024-12-18 01:09:49 PM	Error inserting row 12: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571108).
+The statement has been terminated.
+2024-12-18 01:09:47 PM	Error inserting row 11: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571109).
+The statement has been terminated.
+2024-12-18 01:09:35 PM	Error inserting row 10: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571111).
+The statement has been terminated.
+2024-12-18 01:09:19 PM	Error inserting row 9: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571107).
+The statement has been terminated.
+2024-12-18 01:08:33 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-18 01:06:58 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 01:06:40 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-18 01:04:34 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-18 01:04:34 PM	CSV file not found at path: C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 01:04:16 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-18 01:04:02 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 07:14:00 PM	No Employee files found. Aborting processing.
+2024-12-17 07:13:50 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\FinancialFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 07:13:07 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 07:12:31 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 07:08:57 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-17 07:08:33 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 06:37:42 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-17 06:33:37 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 06:32:38 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-17 06:32:29 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 06:31:10 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-17 06:30:17 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 06:26:56 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-17 06:26:44 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 12:24:31 PM	File 'EmployeeFile_06_12_2024_13_47_13.csv' status updated in the database.
+2024-12-17 12:24:23 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 12:23:49 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-17 12:23:12 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 12:22:08 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-17 12:17:52 PM	File 'EmployeeFile_06_12_2024_13_47_13.csv' status updated in the database.
+2024-12-17 12:17:52 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 12:14:52 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-17 12:13:55 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 12:12:59 PM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-17 12:12:55 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 12:02:58 PM	File 'EmployeeFile_06_12_2024_13_47_13.csv' status updated in the database.
+2024-12-17 12:02:58 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 12:02:57 PM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-17 11:54:45 AM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 11:54:21 AM	Error inserting row 8: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:54:17 AM	Error inserting row 7: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:54:16 AM	Error inserting row 6: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:54:13 AM	Error inserting row 5: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:54:13 AM	Error inserting row 4: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:54:12 AM	Error inserting row 3: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:54:08 AM	Error inserting row 2: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:53:50 AM	Error inserting row 1: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:53:22 AM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-17 11:53:16 AM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 11:50:00 AM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 11:49:57 AM	Error inserting row 8: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:49:57 AM	Error inserting row 7: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:49:57 AM	Error inserting row 6: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:49:57 AM	Error inserting row 5: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:49:57 AM	Error inserting row 4: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:49:57 AM	Error inserting row 3: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:49:57 AM	Error inserting row 2: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:49:57 AM	Error inserting row 1: Must declare the scalar variable "@SalProfile".
+2024-12-17 11:47:49 AM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-17 11:47:38 AM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 11:23:08 AM	File 'EmployeeFile_06_12_2024_13_47_13.csv' status updated in the database.
+2024-12-17 11:23:08 AM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 11:23:07 AM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-17 11:23:05 AM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 11:23:04 AM	Error inserting row 8: Must declare the scalar variable "@JoiningDate".
+2024-12-17 11:23:04 AM	Error inserting row 7: Must declare the scalar variable "@JoiningDate".
+2024-12-17 11:23:04 AM	Error inserting row 6: Must declare the scalar variable "@JoiningDate".
+2024-12-17 11:23:04 AM	Error inserting row 5: Must declare the scalar variable "@JoiningDate".
+2024-12-17 11:23:04 AM	Error inserting row 4: Must declare the scalar variable "@JoiningDate".
+2024-12-17 11:23:04 AM	Error inserting row 3: Must declare the scalar variable "@JoiningDate".
+2024-12-17 11:23:04 AM	Error inserting row 2: Must declare the scalar variable "@JoiningDate".
+2024-12-17 11:23:04 AM	Error inserting row 1: Must declare the scalar variable "@JoiningDate".
+2024-12-17 11:22:18 AM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-17 11:22:12 AM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 10:52:56 AM	File 'EmployeeFile_06_12_2024_13_47_13.csv' status updated in the database.
+2024-12-17 10:52:56 AM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 10:52:54 AM	Data from file 'EmployeeFile_06_12_2024_13_47_13.csv' has been inserted into the database successfully.
+2024-12-17 10:52:52 AM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 10:52:51 AM	Error occurred while mapping DataRow to EmployeeStaging. Details: Column 'JoiningDate' does not belong to table .
+2024-12-17 10:52:49 AM	Error occurred while mapping DataRow to EmployeeStaging. Details: Column 'JoiningDate' does not belong to table .
+2024-12-17 10:52:48 AM	Error occurred while mapping DataRow to EmployeeStaging. Details: Column 'JoiningDate' does not belong to table .
+2024-12-17 10:52:46 AM	Error occurred while mapping DataRow to EmployeeStaging. Details: Column 'JoiningDate' does not belong to table .
+2024-12-17 10:52:44 AM	Error occurred while mapping DataRow to EmployeeStaging. Details: Column 'JoiningDate' does not belong to table .
+2024-12-17 10:52:42 AM	Error occurred while mapping DataRow to EmployeeStaging. Details: Column 'JoiningDate' does not belong to table .
+2024-12-17 10:52:39 AM	Error occurred while mapping DataRow to EmployeeStaging. Details: Column 'JoiningDate' does not belong to table .
+2024-12-17 10:52:02 AM	Error occurred while mapping DataRow to EmployeeStaging. Details: Column 'JoiningDate' does not belong to table .
+2024-12-17 10:51:11 AM	Processing file: EmployeeFile_06_12_2024_13_47_13.csv
+2024-12-17 10:50:19 AM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 10:49:33 AM	Processing file: EmployeeFile_06_12_2024_13_47_13
+2024-12-17 10:49:26 AM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 10:48:27 AM	Data from file 'EmployeeFile_06_12_2024_13_47_13' has been inserted into the database successfully.
+2024-12-17 10:48:27 AM	CSV file not found at path: C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13
+2024-12-17 10:47:45 AM	Processing file: EmployeeFile_06_12_2024_13_47_13
+2024-12-17 10:47:28 AM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13', Status='Pending'.
+2024-12-17 10:45:39 AM	Financial data from 'FinancialFile_06_12_2024_13_47_13.csv' has been inserted into the database.
+2024-12-17 10:44:17 AM	Processing file: FinancialFile_06_12_2024_13_47_13.csv
+2024-12-17 10:43:38 AM	File 'EmployeeFile_06_12_2024_13_47_14.csv' status updated in the database.
+2024-12-17 10:43:38 AM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 10:43:36 AM	Data from file 'EmployeeFile_06_12_2024_13_47_14.csv' has been inserted into the database successfully.
+2024-12-17 10:43:34 AM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 10:43:32 AM	Error inserting row 16: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (RHOMEA1100070).
+The statement has been terminated.
+2024-12-17 10:43:32 AM	Error inserting row 15: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (UAEGA11572261).
+The statement has been terminated.
+2024-12-17 10:43:32 AM	Error inserting row 14: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (ONGA11006625).
+The statement has been terminated.
+2024-12-17 10:43:32 AM	Error inserting row 13: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (EGP11571112).
+The statement has been terminated.
+2024-12-17 10:43:32 AM	Error inserting row 12: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571108).
+The statement has been terminated.
+2024-12-17 10:43:32 AM	Error inserting row 11: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571109).
+The statement has been terminated.
+2024-12-17 10:43:32 AM	Error inserting row 10: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571111).
+The statement has been terminated.
+2024-12-17 10:43:32 AM	Error inserting row 9: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571107).
+The statement has been terminated.
+2024-12-17 10:43:32 AM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 10:43:11 AM	Processing file: EmployeeFile_06_12_2024_13_47_14.csv
+2024-12-17 10:42:58 AM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\FinancialFile_06_12_2024_13_47_13.csv', Status='Pending'.
+2024-12-17 10:40:59 AM	File 'EmployeeFile_06_12_2024_13_47_14.csv' status updated in the database.
+2024-12-17 10:40:58 AM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 10:40:28 AM	Data from file 'EmployeeFile_06_12_2024_13_47_14.csv' has been inserted into the database successfully.
+2024-12-17 10:39:59 AM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-17 10:39:52 AM	Processing file: EmployeeFile_06_12_2024_13_47_14.csv
+2024-12-17 10:39:51 AM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_14.csv', Status='Pending'.
+2024-12-16 11:05:21 PM	File 'EmployeeFile_06_12_2024_13_47_14.csv' status updated in the database.
+2024-12-16 11:05:21 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 11:05:19 PM	Data from file 'EmployeeFile_06_12_2024_13_47_14.csv' has been inserted into the database successfully.
+2024-12-16 11:05:16 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 11:05:13 PM	Processing file: EmployeeFile_06_12_2024_13_47_14.csv
+2024-12-16 11:04:37 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_14.csv', Status='Pending'.
+2024-12-16 10:46:12 PM	File 'EmployeeFile_06_12_2024_13_47_14.csv' status updated in the database.
+2024-12-16 10:46:12 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 10:46:06 PM	Data from file 'EmployeeFile_06_12_2024_13_47_14.csv' has been inserted into the database successfully.
+2024-12-16 10:45:22 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 10:44:39 PM	Error inserting row 1: Violation of UNIQUE KEY constraint 'UQ_EmpCode'. Cannot insert duplicate key in object 'dbo.EmployeeInitialStaging'. The duplicate key value is (11571107).
+The statement has been terminated.
+2024-12-16 10:44:05 PM	Processing file: EmployeeFile_06_12_2024_13_47_14.csv
+2024-12-16 10:44:03 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_14.csv', Status='Pending'.
+2024-12-16 03:46:03 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_14.csv', Status='Pending'.
+2024-12-16 03:32:35 PM	File 'EmployeeFile_06_12_2024_13_47_14.csv' status updated in the database.
+2024-12-16 03:32:35 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 03:32:32 PM	Data from file 'EmployeeFile_06_12_2024_13_47_14.csv' has been inserted into the database successfully.
+2024-12-16 03:31:33 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 03:01:39 PM	File 'EmployeeFile_06_12_2024_13_47_14.csv' status updated in the database.
+2024-12-16 03:01:03 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 03:00:56 PM	Data from file 'EmployeeFile_06_12_2024_13_47_14.csv' has been inserted into the database successfully.
+2024-12-16 03:00:52 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 02:46:02 PM	Data from file 'EmployeeFile_06_12_2024_13_47_14.csv' has been inserted into the database successfully.
+2024-12-16 02:45:28 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 02:44:17 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_14.csv', Status='Pending'.
+2024-12-16 02:31:25 PM	Data from file 'EmployeeFile_06_12_2024_13_47_14.csv' has been inserted into the database successfully.
+2024-12-16 02:29:45 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 02:26:11 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_14.csv', Status='Pending'.
+2024-12-16 02:22:29 PM	File 'EmployeeFile_06_12_2024_13_47_14.csv' status updated in the database.
+2024-12-16 02:22:29 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 02:22:29 PM	Data from file 'EmployeeFile_06_12_2024_13_47_14.csv' has been inserted into the database successfully.
+2024-12-16 02:22:27 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 02:16:17 PM	Data from file 'EmployeeFile_06_12_2024_13_47_14.csv' has been inserted into the database successfully.
+2024-12-16 02:16:14 PM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 02:16:14 PM	Failed to log error to SFIErrorLog. Details: Invalid column name 'RowNumber'.
+Invalid column name 'LoggedDate'.
+2024-12-16 02:16:14 PM	Failed to log error to SFIErrorLog. Details: Invalid column name 'RowNumber'.
+Invalid column name 'LoggedDate'.
+2024-12-16 02:16:11 PM	Failed to log error to SFIErrorLog. Details: Invalid column name 'RowNumber'.
+Invalid column name 'LoggedDate'.
+2024-12-16 02:16:10 PM	Failed to log error to SFIErrorLog. Details: Invalid column name 'RowNumber'.
+Invalid column name 'LoggedDate'.
+2024-12-16 02:16:09 PM	Failed to log error to SFIErrorLog. Details: Invalid column name 'RowNumber'.
+Invalid column name 'LoggedDate'.
+2024-12-16 02:16:07 PM	Failed to log error to SFIErrorLog. Details: Invalid column name 'RowNumber'.
+Invalid column name 'LoggedDate'.
+2024-12-16 02:15:38 PM	Failed to log error to SFIErrorLog. Details: Invalid column name 'RowNumber'.
+Invalid column name 'LoggedDate'.
+2024-12-16 02:15:25 PM	Failed to log error to SFIErrorLog. Details: Invalid column name 'RowNumber'.
+Invalid column name 'LoggedDate'.
+2024-12-16 02:13:40 PM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_14.csv', Status='Pending'.
+2024-12-16 12:26:49 AM	Data from file 'EmployeeFile_06_12_2024_13_47_14.csv' has been inserted into the database successfully.
+2024-12-16 12:26:47 AM	Status updated successfully to 'Processed and Inserted into Database' in EmployeeInitialStaging.
+2024-12-16 12:26:44 AM	File added successfully: SftpUrl='ftp://ftp.bluespectech.com/old/EmployeeFile_06_12_2024_13_47_13.csv', LocalPath='C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_14.csv', Status='Pending'.

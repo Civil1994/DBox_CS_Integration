@@ -1,0 +1,597 @@
+﻿Exception: L.no: 0, On: 2024-12-19 01:00 PM
+Incorrect syntax near the keyword 'WHERE'.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-19 01:00 PM
+Incorrect syntax near the keyword 'WHERE'.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-19 01:00 PM
+Incorrect syntax near the keyword 'WHERE'.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-19 01:00 PM
+Incorrect syntax near the keyword 'WHERE'.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-19 01:00 PM
+Incorrect syntax near the keyword 'WHERE'.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-19 01:00 PM
+Incorrect syntax near the keyword 'WHERE'.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-19 01:00 PM
+Incorrect syntax near the keyword 'WHERE'.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-19 12:25 PM
+Must declare the scalar variable "@LocLib5".
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-19 12:25 PM
+Column 'CostCentreCode' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 09:04 PM
+Violation of PRIMARY KEY constraint 'PK_Photos_1'. Cannot insert duplicate key in object 'dbo.Photos'. The duplicate key value is (11571404.JPG, 1).
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 09:04 PM
+Violation of PRIMARY KEY constraint 'PK_Photos_1'. Cannot insert duplicate key in object 'dbo.Photos'. The duplicate key value is (11571403.JPG, 1).
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 09:04 PM
+Violation of PRIMARY KEY constraint 'PK_Photos_1'. Cannot insert duplicate key in object 'dbo.Photos'. The duplicate key value is (11571402.JPG, 1).
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 09:04 PM
+Violation of PRIMARY KEY constraint 'PK_Photos_1'. Cannot insert duplicate key in object 'dbo.Photos'. The duplicate key value is (11571401.JPG, 1).
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 09:04 PM
+Violation of PRIMARY KEY constraint 'PK_Photos_1'. Cannot insert duplicate key in object 'dbo.Photos'. The duplicate key value is (11571108.JPG, 1).
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 09:04 PM
+Violation of PRIMARY KEY constraint 'PK_Photos_1'. Cannot insert duplicate key in object 'dbo.Photos'. The duplicate key value is (11571109.JPG, 1).
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 09:04 PM
+The process cannot access the file 'C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path)
+   at FTPDownloader.MainWindow.ReadCsvToDataTable(String filePath) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 873
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 09:04 PM
+The process cannot access the file 'C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path)
+   at FTPDownloader.MainWindow.ReadCsvToDataTable(String filePath) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 873
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 08:50 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 08:17 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 08:17 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 08:17 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 08:17 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 08:17 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 08:17 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 08:17 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 08:17 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:24 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:24 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:24 PM
+The conversion of a nvarchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:24 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:23 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:23 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:23 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:23 PM
+The conversion of a nvarchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:20 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:20 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:20 PM
+The conversion of a nvarchar data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:20 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:20 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:20 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:20 PM
+String or binary data would be truncated.
+The statement has been terminated.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:20 PM
+Invalid column name 'NoticeDayByEmp'.
+Invalid column name 'NoticeDayByComp'.
+Invalid column name 'ProbPeriod'.
+Invalid column name 'WRKAGREETYPE'.
+Invalid column name 'WrkAgrStartDt'.
+Invalid column name 'WrkAgrEndDt'.
+
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:02 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:02 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:02 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:01 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:01 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:01 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:01 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 07:01 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:52 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:51 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:50 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:50 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:50 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:50 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:49 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:48 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:41 PM
+The process cannot access the file 'C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path)
+   at FTPDownloader.MainWindow.ReadCsvToDataTable(String filePath) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 873
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:41 PM
+The process cannot access the file 'C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path)
+   at FTPDownloader.MainWindow.ReadCsvToDataTable(String filePath) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 873
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:39 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:39 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:39 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:39 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:39 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:39 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:39 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 06:39 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.InsertEmployee(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ValidateAndInsert(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 05:09 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 03:05 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 03:02 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\Class\ImportToCSEmployeeTable.cs:line 131
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging() in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\Class\ImportToCSEmployeeTable.cs:line 110
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 03:00 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging()
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 02:33 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\Class\ImportToCSEmployeeTable.cs:line 131
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging() in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\Class\ImportToCSEmployeeTable.cs:line 110
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 02:24 PM
+Specified cast is not valid.
+   at System.Data.DataRowExtensions.UnboxT`1.NullableField[TElem](Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at FTPDownloader.Class.ImportToCSEmployeeTable.MapRowToParameters(DataRow row) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\Class\ImportToCSEmployeeTable.cs:line 131
+   at FTPDownloader.Class.ImportToCSEmployeeTable.ImportDataFromStaging() in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\Class\ImportToCSEmployeeTable.cs:line 110
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 02:22 PM
+The process cannot access the file 'C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path)
+   at FTPDownloader.MainWindow.ReadCsvToDataTable(String filePath) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 1370
+==============================================================================
+Exception: L.no: 0, On: 2024-12-18 02:21 PM
+The process cannot access the file 'C:\Jitendra\Test\EmployeeFile_06_12_2024_13_47_13.csv' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamReader..ctor(String path)
+   at FTPDownloader.MainWindow.ReadCsvToDataTable(String filePath) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 1370
+==============================================================================
+Exception: L.no: 738, On: 2024-12-17 10:52 AM
+Object reference not set to an instance of an object.
+   at FTPDownloader.MainWindow.ValidateEmployeeData(EmployeeStaging employeeStaging) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 738
+   at FTPDownloader.MainWindow.InsertEmployeeCsvDataToSqlTable(String csvFilePath, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 380
+==============================================================================
+Exception: L.no: 0, On: 2024-12-17 10:52 AM
+Column 'JoiningDate' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at FTPDownloader.MainWindow.MapDataRowToEmployee(DataRow row, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 573
+==============================================================================
+Exception: L.no: 738, On: 2024-12-17 10:52 AM
+Object reference not set to an instance of an object.
+   at FTPDownloader.MainWindow.ValidateEmployeeData(EmployeeStaging employeeStaging) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 738
+   at FTPDownloader.MainWindow.InsertEmployeeCsvDataToSqlTable(String csvFilePath, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 380
+==============================================================================
+Exception: L.no: 0, On: 2024-12-17 10:52 AM
+Column 'JoiningDate' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at FTPDownloader.MainWindow.MapDataRowToEmployee(DataRow row, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 573
+==============================================================================
+Exception: L.no: 738, On: 2024-12-17 10:52 AM
+Object reference not set to an instance of an object.
+   at FTPDownloader.MainWindow.ValidateEmployeeData(EmployeeStaging employeeStaging) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 738
+   at FTPDownloader.MainWindow.InsertEmployeeCsvDataToSqlTable(String csvFilePath, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 380
+==============================================================================
+Exception: L.no: 0, On: 2024-12-17 10:52 AM
+Column 'JoiningDate' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at FTPDownloader.MainWindow.MapDataRowToEmployee(DataRow row, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 573
+==============================================================================
+Exception: L.no: 738, On: 2024-12-17 10:52 AM
+Object reference not set to an instance of an object.
+   at FTPDownloader.MainWindow.ValidateEmployeeData(EmployeeStaging employeeStaging) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 738
+   at FTPDownloader.MainWindow.InsertEmployeeCsvDataToSqlTable(String csvFilePath, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 380
+==============================================================================
+Exception: L.no: 0, On: 2024-12-17 10:52 AM
+Column 'JoiningDate' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at FTPDownloader.MainWindow.MapDataRowToEmployee(DataRow row, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 573
+==============================================================================
+Exception: L.no: 738, On: 2024-12-17 10:52 AM
+Object reference not set to an instance of an object.
+   at FTPDownloader.MainWindow.ValidateEmployeeData(EmployeeStaging employeeStaging) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 738
+   at FTPDownloader.MainWindow.InsertEmployeeCsvDataToSqlTable(String csvFilePath, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 380
+==============================================================================
+Exception: L.no: 0, On: 2024-12-17 10:52 AM
+Column 'JoiningDate' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at FTPDownloader.MainWindow.MapDataRowToEmployee(DataRow row, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 573
+==============================================================================
+Exception: L.no: 738, On: 2024-12-17 10:52 AM
+Object reference not set to an instance of an object.
+   at FTPDownloader.MainWindow.ValidateEmployeeData(EmployeeStaging employeeStaging) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 738
+   at FTPDownloader.MainWindow.InsertEmployeeCsvDataToSqlTable(String csvFilePath, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 380
+==============================================================================
+Exception: L.no: 0, On: 2024-12-17 10:52 AM
+Column 'JoiningDate' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at FTPDownloader.MainWindow.MapDataRowToEmployee(DataRow row, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 573
+==============================================================================
+Exception: L.no: 738, On: 2024-12-17 10:52 AM
+Object reference not set to an instance of an object.
+   at FTPDownloader.MainWindow.ValidateEmployeeData(EmployeeStaging employeeStaging) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 738
+   at FTPDownloader.MainWindow.InsertEmployeeCsvDataToSqlTable(String csvFilePath, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 380
+==============================================================================
+Exception: L.no: 0, On: 2024-12-17 10:52 AM
+Column 'JoiningDate' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at FTPDownloader.MainWindow.MapDataRowToEmployee(DataRow row, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 573
+==============================================================================
+Exception: L.no: 738, On: 2024-12-17 10:52 AM
+Object reference not set to an instance of an object.
+   at FTPDownloader.MainWindow.ValidateEmployeeData(EmployeeStaging employeeStaging) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 738
+   at FTPDownloader.MainWindow.InsertEmployeeCsvDataToSqlTable(String csvFilePath, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 380
+==============================================================================
+Exception: L.no: 0, On: 2024-12-17 10:52 AM
+Column 'JoiningDate' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at FTPDownloader.MainWindow.MapDataRowToEmployee(DataRow row, String fileName, String status) in C:\Jitendra\Office Doc\Integration Mapping Document\FTPDownloader\MainWindow.xaml.cs:line 573
+==============================================================================
