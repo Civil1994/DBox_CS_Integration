@@ -342,7 +342,7 @@ namespace DBox_CS.WebAPI.Controllers
                 };
             }
 
-            exist = _objMain.IsExist("Sponsor", model.PrevSponsorCompany, "Code");
+            exist = _objMain.IsExist("Sponsor", model.PrevSponsorCompany, "NameE");
             if (!exist)
             {
                 return new Response
@@ -364,7 +364,7 @@ namespace DBox_CS.WebAPI.Controllers
                 };
             }
 
-            exist = _objMain.IsExist("Sponsor", model.CurrSponsorCompany, "Code");
+            exist = _objMain.IsExist("Sponsor", model.CurrSponsorCompany, "NameE");
             if (!exist)
             {
                 return new Response

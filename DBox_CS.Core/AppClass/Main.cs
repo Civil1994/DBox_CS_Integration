@@ -177,6 +177,7 @@ namespace DBox_CS.Core.AppClass
             }
             else
             {
+
                 switch (msgtype)
                 {
                     case Msgtype.Error:
