@@ -1054,11 +1054,11 @@ namespace DBox_CS.Core.BL
 
                                 if (strEditMode != "EDIT")
                                 {
-                                    if (CheckIfMandatory(xlcol_FamilyNameE, enmXlImportTables.Employee))
-                                    {
-                                        AppendLineError(nRowNo, rowErrInfo, dictTitleNames[xlcol_FamilyNameE] + " cannot be blank");
-                                        bskipInsertUpdate = true;
-                                    }
+                                    //if (CheckIfMandatory(xlcol_FamilyNameE, enmXlImportTables.Employee))
+                                    //{
+                                    //    AppendLineError(nRowNo, rowErrInfo, dictTitleNames[xlcol_FamilyNameE] + " cannot be blank");
+                                    //    bskipInsertUpdate = true;
+                                    //}
                                 }
                                 else if (drowEmpOld != null && drowEmpOld["FamilyNameE"] != DBNull.Value)
                                 {
@@ -1546,11 +1546,11 @@ namespace DBox_CS.Core.BL
 
                                 if (strEditMode != "EDIT")
                                 {
-                                    if (CheckIfMandatory(xlcol_MaritalStat, enmXlImportTables.Employee))
-                                    {
-                                        AppendLineError(nRowNo, rowErrInfo, dictTitleNames[xlcol_MaritalStat] + " cannot be blank");
-                                        bskipInsertUpdate = true;
-                                    }
+                                    //if (CheckIfMandatory(xlcol_MaritalStat, enmXlImportTables.Employee))
+                                    //{
+                                    //    AppendLineError(nRowNo, rowErrInfo, dictTitleNames[xlcol_MaritalStat] + " cannot be blank");
+                                    //    bskipInsertUpdate = true;
+                                    //}
                                 }
                                 else if (drowEmpOld != null && drowEmpOld["MaritalStat"] != DBNull.Value)
                                 {
@@ -1563,7 +1563,7 @@ namespace DBox_CS.Core.BL
 
                                 if (!ValidateField(xlcol_MaritalStat, StrMaritalStat, isUpdate, ref fieldErr, ref lookupCodeObj))
                                 {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
                                 }
                                 else
@@ -1973,11 +1973,11 @@ namespace DBox_CS.Core.BL
 
                                 if (strEditMode != "EDIT")
                                 {
-                                    if (CheckIfMandatory(xlcol_Religion, enmXlImportTables.Employee))
-                                    {
-                                        AppendLineError(nRowNo, rowErrInfo, dictTitleNames[xlcol_Religion] + " cannot be blank");
-                                        bskipInsertUpdate = true;
-                                    }
+                                    //if (CheckIfMandatory(xlcol_Religion, enmXlImportTables.Employee))
+                                    //{
+                                    //    AppendLineError(nRowNo, rowErrInfo, dictTitleNames[xlcol_Religion] + " cannot be blank");
+                                    //    bskipInsertUpdate = true;
+                                    //}
                                 }
                                 else if (drowEmpOld != null && drowEmpOld["Religion"] != DBNull.Value)
                                 {
@@ -1988,17 +1988,17 @@ namespace DBox_CS.Core.BL
                             {
                                 StrReligion = row[xlcol_Religion].ToString();
 
-                                if (!ValidateField(xlcol_Religion, StrReligion, isUpdate, ref fieldErr, ref lookupCodeObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_Religion, StrReligion, isUpdate, ref fieldErr, ref lookupCodeObj))
+                                //{
+                                   // AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     ReligionCode = Convert.ToString(lookupCodeObj);
 
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_Religion] + " " + StrReligion + "]");
-                                }
+                                //}
                             }
 
                         }
@@ -4594,17 +4594,17 @@ namespace DBox_CS.Core.BL
                             {
                                 StrAuxInt1 = row[xlcol_AuxInt1].ToString();
 
-                                if (!ValidateField(xlcol_AuxInt1, StrAuxInt1, isUpdate, ref fieldErr, ref emptyObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_AuxInt1, StrAuxInt1, isUpdate, ref fieldErr, ref emptyObj))
+                                //{
+                                    //AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                               // }
+                                //else
+                                //{
                                     nAuxInt1 = Convert.ToInt32(StrAuxInt1);
 
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_AuxInt1] + " " + StrAuxInt1 + "]");
-                                }
+                               // }
 
                             }
                         }
@@ -4626,17 +4626,17 @@ namespace DBox_CS.Core.BL
                             {
                                 StrAuxInt2 = row[xlcol_AuxInt2].ToString();
 
-                                if (!ValidateField(xlcol_AuxInt2, StrAuxInt2, isUpdate, ref fieldErr, ref emptyObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_AuxInt2, StrAuxInt2, isUpdate, ref fieldErr, ref emptyObj))
+                                //{
+                                    //AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     nAuxInt2 = Convert.ToInt32(StrAuxInt2);
 
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_AuxInt2] + " " + StrAuxInt2 + "]");
-                                }
+                                //}
 
                             }
                         }
@@ -5534,17 +5534,17 @@ namespace DBox_CS.Core.BL
 
                                 StrReligionSubSet = row[xlcol_ReligionSubSet].ToString();
 
-                                if (!ValidateField(xlcol_ReligionSubSet, StrReligionSubSet, isUpdate, ref fieldErr, ref lookupCodeObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_ReligionSubSet, StrReligionSubSet, isUpdate, ref fieldErr, ref lookupCodeObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     ReligionSubSetCode = Convert.ToString(lookupCodeObj);
 
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_ReligionSubSet] + " " + StrReligionSubSet + "]");
-                                }
+                                //}
                             }
                         }
 
@@ -6148,12 +6148,12 @@ namespace DBox_CS.Core.BL
 
                         RetVal = BusinessRules.CheckBusinessRule(1, dtEmployee, "Employee", "EmpCode", ErrTable, out Errors);
 
-                        if (RetVal == false)
-                        {
-                            AppendLineError(nRowNo, rowErrInfo, "An unexpected error occured while verifying Employee business rule");
-                            bHasEmpBRerror = true;
-                            skipEmpSave = true;
-                        }
+                        //if (RetVal == false)
+                        //{
+                        //    AppendLineError(nRowNo, rowErrInfo, "An unexpected error occured while verifying Employee business rule");
+                        //    bHasEmpBRerror = true;
+                        //    skipEmpSave = true;
+                        //}
 
                         Int16 Ctr1 = 0;
                         if (Errors.Count > 0)
@@ -6170,22 +6170,22 @@ namespace DBox_CS.Core.BL
                             DataView dvErrors = new DataView(ErrTable);
                             dvErrors.RowFilter = "Code IN(" + Codes + ") AND Severity NOT IN (2,1)";
 
-                            if (dvErrors.Count > 0)
-                            {
-                                int nErrno = 0;
-                                foreach (DataRowView rowDv in dvErrors)
-                                {
-                                    if (rowDv[5].ToString() == "0" || rowDv[5].ToString() == "3")
-                                    {
-                                        nErrno++;
-                                        AppendLineError(nRowNo, rowErrInfo, "Employee Business rule Error#" + nErrno + " - " + rowDv["Message"].ToString());
-                                        bHasEmpBRerror = true;
-                                        skipEmpSave = true;
+                            //if (dvErrors.Count > 0)
+                            //{
+                            //    int nErrno = 0;
+                            //    foreach (DataRowView rowDv in dvErrors)
+                            //    {
+                            //        if (rowDv[5].ToString() == "0" || rowDv[5].ToString() == "3")
+                            //        {
+                            //            nErrno++;
+                            //            AppendLineError(nRowNo, rowErrInfo, "Employee Business rule Error#" + nErrno + " - " + rowDv["Message"].ToString());
+                            //            bHasEmpBRerror = true;
+                            //            skipEmpSave = true;
 
-                                    }
-                                }
+                            //        }
+                            //    }
 
-                            }
+                            //}
                         }
 
                         //// Employee business rule code end 
