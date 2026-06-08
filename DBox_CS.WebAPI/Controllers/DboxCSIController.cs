@@ -283,15 +283,29 @@ namespace DBox_CS.WebAPI.Controllers
 
                 return Ok(success);
             }
+            //catch (ManualException ex)
+            //{
+            //    var error = new Response
+            //    {
+            //        Status = 0,
+            //        Message = "Error saving sponsor change details",
+            //        Data = new ResponseData { ErrorData = { string.IsNullOrEmpty(ex.Message) ? "internal server error" : ex.Message } }
+            //    };
+            //    return StatusCode(500, error);
+            //}
             catch (ManualException ex)
             {
                 var error = new Response
                 {
                     Status = 0,
-                    Message = "Error saving sponsor change details",
-                    Data = new ResponseData { ErrorData = { string.IsNullOrEmpty(ex.Message) ? "internal server error" : ex.Message } }
+                    Message = ex.Message,   
+                    Data = new ResponseData
+                    {
+                        ErrorData = { ex.Message }
+                    }
                 };
-                return StatusCode(500, error);
+
+                return BadRequest(error); 
             }
             catch (Exception ex)
             {
