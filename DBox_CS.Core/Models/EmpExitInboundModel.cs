@@ -74,7 +74,7 @@ namespace DBox_CS.Core.Models
                     bool isRecordExist = CheckRequestExists(EmpId, out count, ref errMsg);
                     if (isRecordExist)
                     {
-
+                        
                         throw new ManualException("This employee already has the maximum number of requests in process");
                     }
 
@@ -484,8 +484,9 @@ namespace DBox_CS.Core.Models
             }
             catch (Exception ex)
             {
-                Common.LogErrorToDBOXIErrorLog(Convert.ToInt32(processId), processdetailsId, exitObj.EmployeeID, ex.Message, ex.InnerException.Message);
-                throw ex;
+                Common.LogErrorToDBOXIErrorLog(Convert.ToInt32(processId), processdetailsId, exitObj.EmployeeID, ex.Message, ex.InnerException?.Message);
+               // tran.Rollback();
+                throw ;
             }
             finally
             {
