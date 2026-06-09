@@ -77,6 +77,7 @@ namespace DBox_CS.Core.BL
 
         public void SaveModelToSponsorStaging(SponsorchangeModel spchangeModel, int processid)
         {
+            Common.LogAction($"Dbox Integration SaveModelToSponsorStaging started.");
             SponsorchangeStaging sponsorstgmodel = SponsorChangeStagingBL.MapModelToStagingModel(spchangeModel, processid);
 
             string sQry = @"
@@ -102,6 +103,7 @@ namespace DBox_CS.Core.BL
 
                 throw new ManualException("", errorMsg);
             }
+            Common.LogAction($"Dbox Integration SaveModelToSponsorStaging completed.");
         }
 
 

@@ -45,7 +45,7 @@ namespace DBox_CS.Core.Models
             int processId = 0, processdetailsId = 0;
             try
             {
-
+                Common.LogAction($"Dbox Exit Integration PostEmployeeExit started.");
                 string errMsg = "";
                 string qry = @"INSERT INTO DBOXIProcessLog (ProcessName, StartTime, EndTime, HasErrors, Remarks) VALUES ('Exit Employee from DBox', GETDATE(), NULL, 0, 'Exit Process Started');SELECT SCOPE_IDENTITY();";
                 bool procres = ConnectionFunctions.Connect_SQLInsertWithID(ref processId, qry, ref errMsg);
@@ -470,6 +470,7 @@ namespace DBox_CS.Core.Models
 
                             // ✅ COMMIT
                             tran.Commit();
+                            Common.LogAction($"Dbox Exit Integration PostEmployeeExit completed.");
                         }
                         catch (Exception ex)
                         {
@@ -485,7 +486,8 @@ namespace DBox_CS.Core.Models
             catch (Exception ex)
             {
                 Common.LogErrorToDBOXIErrorLog(Convert.ToInt32(processId), processdetailsId, exitObj.EmployeeID, ex.Message, ex.InnerException?.Message);
-               // tran.Rollback();
+                Common.LogAction("Transaction Failed: " + ex.Message);
+                // tran.Rollback();
                 throw ;
             }
             finally
@@ -544,7 +546,7 @@ namespace DBox_CS.Core.Models
         {
             string errMsg = "";
             int result = 0;
-
+            Common.LogAction("InsertEmpExitStaging started ");
             string qry = @"INSERT INTO DBOXI_EmpExitInitialStaging
                    (DBOXIProcessId, RowNo, EmployeeID, LastWorkingDate, CurrentLocation,
                     ReasonofCancellation, EmployeeHasFamilySponsored, Doc_Pass1, Doc_Pass2)
@@ -649,7 +651,7 @@ namespace DBox_CS.Core.Models
             cmdDoc.Transaction = tran;
 
             int authDocId = 0;
-
+            Common.LogAction("SaveExitDocument started ");
             // =========================
             // CASE 1: FILE FROM API
             // =========================
@@ -746,6 +748,8 @@ namespace DBox_CS.Core.Models
                     cmdDoc.Parameters.AddWithValue("@Type", type);
                     cmdDoc.Parameters.AddWithValue("@Data", data);
                     cmdDoc.ExecuteNonQuery();
+
+                    Common.LogAction("SaveExitDocument completed ");
                 }
             }
         }
