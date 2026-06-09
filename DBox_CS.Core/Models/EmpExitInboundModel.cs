@@ -40,7 +40,7 @@ namespace DBox_CS.Core.Models
     public class ExitMethods
     {
 
-        public void PostEmployeeExit(EmpExitInboundModel exitObj)
+        public void PostEmployeeExit(EmpExitInboundModel exitObj, bool Issponsorchange=false,string Passcpy1="",string passcpy2="")
         {
             int processId = 0, processdetailsId = 0;
             try
@@ -74,8 +74,10 @@ namespace DBox_CS.Core.Models
                     bool isRecordExist = CheckRequestExists(EmpId, out count, ref errMsg);
                     if (isRecordExist)
                     {
-                        
-                        throw new ManualException("This employee already has the maximum number of requests in process");
+                        if (Issponsorchange == false)
+                        throw new ManualException("There is already an Exit request in progress");
+                        else
+                            throw new ManualException("There is already a Service request for Sponsor change in progress");
                     }
 
                     EmpNameE = dt.Rows[0]["EmpNameE"].ToString();
@@ -453,6 +455,18 @@ namespace DBox_CS.Core.Models
                             SaveExitDocument(conn, tran, EmpId, newReqID, "31", wbBytes, "WBPhoto", wbContentType);
 
                             SaveExitDocument(conn, tran, EmpId, newReqID, "RSV", resBytes, "Resignation", resContentType);
+                            if (Issponsorchange == true)
+                            {
+                                string ppContentType1;
+                                byte[] ppBytes1 = ConvertBase64ToBytes(exitObj.doc_WBPhoto, out ppContentType1);
+
+                                string ppContentType2;
+                                byte[] ppBytes2 = ConvertBase64ToBytes(exitObj.doc_Res, out ppContentType2);
+
+                                SaveExitDocument(conn, tran, EmpId, newReqID, "29", ppBytes1, "PassPortCpy1", ppContentType1);
+
+                                SaveExitDocument(conn, tran, EmpId, newReqID, "30", ppBytes2, "PassPortCpy2", ppContentType2);
+                            }
 
                             // ✅ 9. Final Audit (Edit)
                             cmd.CommandText = @"
@@ -467,6 +481,7 @@ namespace DBox_CS.Core.Models
                             cmd.Parameters.AddWithValue("@EmpId", EmpId);
 
                             cmd.ExecuteNonQuery();
+          
 
                             // ✅ COMMIT
                             tran.Commit();
@@ -474,40 +489,22 @@ namespace DBox_CS.Core.Models
                         }
                         catch (Exception ex)
                         {
-                            Common.LogErrorToDBOXIErrorLog(Convert.ToInt32(processId), processdetailsId, exitObj.EmployeeID, ex.Message, ex.InnerException.Message);
+                            Common.LogErrorToDBOXIErrorLog(Convert.ToInt32(processId), processdetailsId, exitObj.EmployeeID, ex.Message, ex.InnerException?.Message);
                             tran.Rollback();
                             Common.LogAction("Transaction Failed: " + ex.Message);
-                            throw ex;
+                            throw;
                         }
                     }
 
-                }
-            }
-            catch (Exception ex)
-            {
-                Common.LogErrorToDBOXIErrorLog(Convert.ToInt32(processId), processdetailsId, exitObj.EmployeeID, ex.Message, ex.InnerException?.Message);
-                Common.LogAction("Transaction Failed: " + ex.Message);
-                // tran.Rollback();
-                throw ;
-            }
-            finally
-            {
-                try
-                {
-                    int result = 0;
-                    string errMsg = "";
-
-                    // ✅ 1. Update Process Log (End Time + Remarks)
-                    string updateQry = @"UPDATE DBOXIProcessLog
+                    try
+                    {
+                        string updateQry = @"UPDATE DBOXIProcessLog
                              SET EndTime = GETDATE(),
                                  Remarks = 'Exit Process Completed'
                              WHERE DBOXIProcessId = " + processId;
 
-                    ConnectionFunctions.Connect_SQLNonQuery(ref result, updateQry, ref errMsg);
-
-
-                    // ✅ 2. Move Data to Closed Table
-                    string moveQry = @"INSERT INTO DBOXI_EmpExitStagingClosed
+                        ConnectionFunctions.Connect_SQLNonQuery(ref result, updateQry, ref errMsg);
+                        string moveQry = @"INSERT INTO DBOXI_EmpExitStagingClosed
                            (DBOXIProcessId, InsertedDate, RowNo, EmployeeID, LastWorkingDate,
                             CurrentLocation, ReasonofCancellation, EmployeeHasFamilySponsored,
                             Doc_Pass1, Doc_Pass2)
@@ -525,14 +522,34 @@ namespace DBox_CS.Core.Models
                            FROM DBOXI_EmpExitInitialStaging
                            WHERE DBOXIProcessId = " + processId;
 
-                    ConnectionFunctions.Connect_SQLNonQuery(ref result, moveQry, ref errMsg);
+                        ConnectionFunctions.Connect_SQLNonQuery(ref result, moveQry, ref errMsg);
 
 
-                    // ✅ 3. Delete from Staging
-                    string deleteQry = @"DELETE FROM DBOXI_EmpExitInitialStaging
+                        // ✅ 3. Delete from Staging
+                        string deleteQry = @"DELETE FROM DBOXI_EmpExitInitialStaging
                              WHERE DBOXIProcessId = " + processId;
 
-                    ConnectionFunctions.Connect_SQLNonQuery(ref result, deleteQry, ref errMsg);
+                        ConnectionFunctions.Connect_SQLNonQuery(ref result, deleteQry, ref errMsg);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Common.LogErrorToDBOXIErrorLog(Convert.ToInt32(processId), processdetailsId, exitObj.EmployeeID, ex.Message, ex.InnerException?.Message);
+                Common.LogAction("Transaction Failed: " + ex.Message);
+                // tran.Rollback();
+                throw ;
+            }
+            finally
+            {
+                try
+                {
+                   
                 }
                 catch (Exception ex)
                 {
@@ -629,19 +646,29 @@ namespace DBox_CS.Core.Models
 
             if (string.IsNullOrEmpty(base64))
                 return null;
-
-            // Remove base64 prefix if exists
-            if (base64.Contains(","))
+            try
             {
-                var prefix = base64.Substring(0, base64.IndexOf(","));
-                base64 = base64.Substring(base64.IndexOf(",") + 1);
+                if (base64.Contains(","))
+                {
+                    var prefix = base64.Substring(0, base64.IndexOf(","));
+                    base64 = base64.Substring(base64.IndexOf(",") + 1);
 
-                if (prefix.Contains("image/jpeg")) contentType = "image/jpeg";
-                else if (prefix.Contains("image/png")) contentType = "image/png";
-                else if (prefix.Contains("application/pdf")) contentType = "application/pdf";
+                    if (prefix.Contains("image/jpeg")) contentType = "image/jpeg";
+                    else if (prefix.Contains("image/png")) contentType = "image/png";
+                    else if (prefix.Contains("application/pdf")) contentType = "application/pdf";
+                    
+                }
             }
-
+            catch (Exception ex)
+            {
+                Common.LogAction("Base64 Conversion Error: " + ex.Message);
+                throw;
+            }
             return Convert.FromBase64String(base64);
+            // Remove base64 prefix if exists
+
+
+
         }
 
         void SaveExitDocument(SqlConnection conn, SqlTransaction tran,string empId, int reqId, string docCode, byte[] fileData, string fileName, string contentType)
@@ -702,6 +729,13 @@ namespace DBox_CS.Core.Models
 
                     case "RSV":
                         docTable = "Documents_RSV";
+                        break;
+
+                    case "29":
+                        docTable = "Documents_29";
+                        break;
+                    case "30":
+                        docTable = "Documents_30";
                         break;
 
                     default:
