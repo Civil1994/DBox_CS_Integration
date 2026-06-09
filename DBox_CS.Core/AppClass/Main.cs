@@ -130,13 +130,13 @@ namespace DBox_CS.Core.AppClass
             }
         }
 
-        public void SaveEmployeeExit(EmpExitInboundModel empExitModel)
+        public void SaveEmployeeExit(EmpExitInboundModel empExitModel,bool Issponsorchange= false, string Passcpy1 = "", string passcpy2 = "")
         {
             try
             {
                 Common.LogAction($"Dbox Exit Integration started.");
                 ExitMethods exitModel = new ExitMethods();
-                exitModel.PostEmployeeExit(empExitModel);
+                exitModel.PostEmployeeExit(empExitModel, Issponsorchange, Passcpy1, passcpy2);
 
                 Common.LogAction($"Dbox Exit Integration Completed.");
             }
@@ -267,7 +267,13 @@ namespace DBox_CS.Core.AppClass
                         doc_WBPhoto = spchangemodel.Doc_WBPhoto, // if available
                         doc_Res = spchangemodel.Doc_Res // if available
                     };
-                    SaveEmployeeExit(exitModel);
+                    SaveEmployeeExit(exitModel,true, spchangemodel.Doc_PassCpy1, spchangemodel.Doc_PassCpy2);
+                }
+                if (dboxiProcessId != 0)
+                {
+                    spchangestgbl.MoveDataToEmpStagingClosed(dboxiProcessId);
+
+                    Common.LogUFIProcessCompletion(dboxiProcessId, strprocessRemarks, hasProcessError);
                 }
 
 
@@ -288,12 +294,7 @@ namespace DBox_CS.Core.AppClass
             }
             finally
             {
-                if (dboxiProcessId != 0)
-                {
-                    spchangestgbl.MoveDataToEmpStagingClosed(dboxiProcessId);
-
-                    Common.LogUFIProcessCompletion(dboxiProcessId, strprocessRemarks, hasProcessError);
-                }
+              
 
 
                 Common.LogAction($"Dbox Integration Completed.");

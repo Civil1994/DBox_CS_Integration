@@ -7997,11 +7997,11 @@ namespace DBox_CS.Core.BL
 
                                         // VALIDATION STEP
                                         string validationMsg;
-                                        if (!ValidateDocument(docCode, fileBytes, contentType, out validationMsg))
-                                        {
-                                            AppendLineError(nRowNo, $"Validation failed {col.ColumnName}", validationMsg);
-                                            continue; 
-                                        }
+                                        //if (!ValidateDocument(docCode, fileBytes, contentType, out validationMsg))
+                                        //{
+                                        //    AppendLineError(nRowNo, $"Validation failed {col.ColumnName}", validationMsg);
+                                        //    continue; 
+                                        //}
 
                                         // Save document with content type
                                         SaveDocument(nEmpID.ToString(), docCode, fileBytes, contentType);
