@@ -29,7 +29,7 @@ namespace DBox_CS.Core.AppClass
 
         static int iResult = 0;
         static string errmsg = "";
-        static string appFilesPath = @"C:\CIVILSOFT\Application Status Log\Log";//"D:\CIVILSOFT\Application Status Log\Log";//{ get => ConfigurationManager.AppSettings["AppFilesPath"]; }
+        static string appFilesPath = @"D:\CIVILSOFT\Application Status Log\Log";//"D:\CIVILSOFT\Application Status Log\Log";//{ get => ConfigurationManager.AppSettings["AppFilesPath"]; }
 
         public const string logFileName = "Log.txt";
         public const string exceptionFilePath = "ExceptionLog.txt";
