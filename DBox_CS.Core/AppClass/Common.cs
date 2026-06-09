@@ -29,7 +29,7 @@ namespace DBox_CS.Core.AppClass
 
         static int iResult = 0;
         static string errmsg = "";
-        static string appFilesPath { get => ConfigurationManager.AppSettings["AppFilesPath"]; }
+        static string appFilesPath = @"C:\CIVILSOFT\Application Status Log\Log";//"D:\CIVILSOFT\Application Status Log\Log";//{ get => ConfigurationManager.AppSettings["AppFilesPath"]; }
 
         public const string logFileName = "Log.txt";
         public const string exceptionFilePath = "ExceptionLog.txt";
@@ -95,8 +95,8 @@ namespace DBox_CS.Core.AppClass
             try
             {
                 string logDirPath = Path.Combine(appFilesPath, "Log");
-                string logFilePath = Path.Combine(logDirPath, logFileName);
-
+                //string logFilePath = Path.Combine(logDirPath, logFileName);
+                string logFilePath = Path.Combine(appFilesPath, logFileName);
                 if (!Directory.Exists(logDirPath))
                 {
                     Directory.CreateDirectory(logDirPath);
@@ -1885,7 +1885,7 @@ namespace DBox_CS.Core.AppClass
 
         internal static int CreateDBoxIProcessLogEntry(string processName)
         {
-
+            Common.LogAction("CreateDBoxIProcessLogEntry started ");
             int dboxiprocessid = 0;
 
             string errorQuery = " INSERT INTO DBOXIProcessLog ([ProcessName],[StartTime]) VALUES (@ProcessName, GETDATE());    ";

@@ -134,6 +134,7 @@ namespace DBox_CS.Core.AppClass
         {
             try
             {
+                Common.LogAction($"Dbox Exit Integration started.");
                 ExitMethods exitModel = new ExitMethods();
                 exitModel.PostEmployeeExit(empExitModel);
 
@@ -227,13 +228,14 @@ namespace DBox_CS.Core.AppClass
             string strprocessRemarks = "";
             EmployeeImportBL empimportbl = new EmployeeImportBL();
             SponsorChangeStagingBL spchangestgbl = new SponsorChangeStagingBL();
-
+            Common.LogAction($"Dbox Integration Started.");
+            Common.LogAction("SaveSponsorchange started ");
             try
             {
                 dboxiProcessId = Common.CreateDBoxIProcessLogEntry("Sponsor Change Import from DBox");
-
+                Common.LogAction("dboxiProcessId created " + dboxiProcessId);
                 string ErrMsg = string.Empty;
-                Common.LogAction($"Dbox Integration Started.");
+             
 
                 if (dboxiProcessId == 0)
                 {
@@ -253,6 +255,8 @@ namespace DBox_CS.Core.AppClass
                 }
                 if (dboxiProcessId != 0)
                 {
+
+                    Common.LogAction($"Dbox Integration SaveModelToSponsorStaging : SaveEmployeeExit started.");
                     var exitModel = new EmpExitInboundModel
                     {
                         EmployeeID = spchangemodel.EmployeeID,
@@ -280,7 +284,7 @@ namespace DBox_CS.Core.AppClass
                 strprocessRemarks = "An error occured. Check error log for details";
                 hasProcessError = true;
                 Common.LogErrorToDBOXIErrorLog(dboxiProcessId, 0, "", "SaveSponsorchange trycatch block", ex.Message);
-                throw ex;
+                throw;
             }
             finally
             {
