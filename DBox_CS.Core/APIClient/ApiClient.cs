@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DBox_CS.Core.DALayer;
 using DBox_CS.Core.Models;
+using System.Data.SqlClient;
+using DBox_CS.Core.BL;
 
 namespace DBox_CS.Core.APIClient
 {
@@ -16,9 +18,11 @@ namespace DBox_CS.Core.APIClient
     {
         private readonly HttpClient _httpClient;
         private readonly string _baseurl;
-        private readonly string _getAllLocationsurl;
-        private readonly string _addUpdateEmployeeurl;
-        private readonly string _getEmployeeurl;
+        private readonly string _pushEmployee;
+        private readonly string _apikeyheader;
+        private readonly string _apikey;
+        private readonly string _clientId;
+        private readonly string _clientSecret;
 
         public ApiClient(HttpClient httpClient, string apiKey, string apiKeyHeader)
         {
@@ -33,50 +37,53 @@ namespace DBox_CS.Core.APIClient
             
 
             _baseurl = ConfigurationManager.AppSettings.Get("UFApiSettings.BaseUrl");
-            _getAllLocationsurl = _baseurl + ConfigurationManager.AppSettings.Get("UFApiSettings.Endpoints.GetAllLocations");
-            _addUpdateEmployeeurl = _baseurl + ConfigurationManager.AppSettings.Get("UFApiSettings.Endpoints.AddUpdateEmployee");
-            _getEmployeeurl = _baseurl + ConfigurationManager.AppSettings.Get("UFApiSettings.Endpoints.GetEmployee");
+            _pushEmployee = _baseurl + ConfigurationManager.AppSettings.Get("UFApiSettings.Endpoints.PushEmployee");
+
+
+            _apikeyheader = ConfigurationManager.AppSettings["UFApiSettings.APIKeyHeader"].ToString();
+            _apikey = ConfigurationManager.AppSettings["UFApiSettings.APIKey"].ToString();
+
+            _clientId = ConfigurationManager.AppSettings["DBOXApiSettings.ClientId"].ToString();
+            _clientSecret = ConfigurationManager.AppSettings["DBOXApiSettings.ClientSecret"].ToString();
         }
-        public string GetToken(string username, string password)
+        public string GetAccessToken()
         {
-            //var loginData = new { Username = username, Password = password };
-            //var json = JsonConvert.SerializeObject(loginData);
-            //var content = new StringContent(json, Encoding.UTF8, "application/json");
+            using (var client = new HttpClient())
+            {
+                var url = _baseurl + "oauth/v2token";
 
-            ////var response = _httpClient.PostAsync("https://localhost:44382/login", content).GetAwaiter().GetResult();
-            ////var response = _httpClient.PostAsync("https://cpalsalamjed.civilsoft.org/TAReadingAPI/login", content).GetAwaiter().GetResult();
-            //var response = _httpClient.PostAsync(_authurl, content).GetAwaiter().GetResult();
-            //response.EnsureSuccessStatusCode();
-            //var tokenResponse =  response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-            //var tokenresp = JsonConvert.DeserializeObject<TokenResponse>(tokenResponse);
-            //return tokenresp.Token;
+                var formData = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>("client_id", _clientId),
+                    new KeyValuePair<string, string>("client_secret", _clientId),
+                    new KeyValuePair<string, string>("grant_type", "client_credentials")
+                };
 
-            return "";
+                var content = new FormUrlEncodedContent(formData);
 
+                var response = client.PostAsync(url, content).Result;
+                var result = response.Content.ReadAsStringAsync().Result;
+
+                dynamic json = JsonConvert.DeserializeObject(result);
+
+                return json.access_token;
+            }
         }
-        public HttpResponseMessage PostEmployeeData(UFEmployeeDTO data, string paraLocationCode, string paraEmployeeid)
+        public HttpResponseMessage PostEmployeeData(EmployeePushModel data)
         {
 
             var json = JsonConvert.SerializeObject(data);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            //robin testing:uncomment for testing
-            //AppClass.Common.LogAction(json);
-            //AppClass.Common.LogAction("{location-code}:" + paraLocationCode);
-            //AppClass.Common.LogAction("{location-code}:" + paraEmployeeid);
-
-            string addUpdateEmployeeurl_WithPara = _addUpdateEmployeeurl;
-            addUpdateEmployeeurl_WithPara = addUpdateEmployeeurl_WithPara.Replace("{location-code}", paraLocationCode);
-            addUpdateEmployeeurl_WithPara = addUpdateEmployeeurl_WithPara.Replace("{employee-id}", paraEmployeeid);
+            string addUpdateEmployeeurl_WithPara = _pushEmployee;
+            string token = GetAccessToken(); // Get JWT token
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             //robin testing:commented for testing
             var result = _httpClient.PutAsync(addUpdateEmployeeurl_WithPara, content).GetAwaiter().GetResult();
 
-            //robin testing:uncomment for testing
-            //HttpResponseMessage result = null;
-
             return result;
-            
+
         }
     }
 }

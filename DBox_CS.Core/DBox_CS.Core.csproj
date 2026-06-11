@@ -126,6 +126,7 @@
     <Compile Include="AppClass\TranslationHelper.cs" />
     <Compile Include="AppClass\TranslationHelperV2.cs" />
     <Compile Include="AppClass\workflow.cs" />
+    <Compile Include="BL\EmployeeExportBL.cs" />
     <Compile Include="BL\EmployeeImportBL.cs" />
     <Compile Include="BL\EmployeeStagingBL.cs" />
     <Compile Include="BL\SponsorChangeStagingBL.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Models\EmpExitInboundModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\EmployeeStaging.cs" />
+    <Compile Include="Models\PushDataModel.cs" />
     <Compile Include="Models\SponsorchangeStaging.cs" />
     <Compile Include="Models\UFAPIResponse.cs" />
     <Compile Include="Properties\AppResources.Designer.cs">
