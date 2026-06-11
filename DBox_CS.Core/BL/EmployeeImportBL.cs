@@ -280,11 +280,13 @@ namespace DBox_CS.Core.BL
         static string[] MandatoryEmployeeCols =
         {
             xlcol_EmpCode, xlcol_Title, xlcol_EmpNameE, xlcol_FNameE, xlcol_FamilyNameE, xlcol_MotherNameE,xlcol_Sex, xlcol_Religion, xlcol_DateOfBirth,xlcol_MaritalStat,xlcol_CountryOfBirth, 
-            xlcol_BirthPlaceE, xlcol_PassportNoE, xlcol_PCategory, xlcol_PIssueDate,xlcol_PExpiryDate, xlcol_PIssueCountry, xlcol_PIssuePlaceE,
-            xlcol_NPresent, xlcol_NPrevious, xlcol_PassportProf, xlcol_Education, xlcol_Language1, xlcol_Language2,
-            xlcol_Emirates, xlcol_Area, xlcol_City,xlcol_BuildingE, xlcol_StreetE, xlcol_FlatE,xlcol_POBox,
-            xlcol_OffPhoneNo,xlcol_ResPhoneNo, xlcol_MobileNo, xlcol_TeleNoAbroad, 
-            xlcol_PersEmail, xlcol_AddressE, xlcol_PerAddressE, xlcol_Email,
+            xlcol_BirthPlaceE, xlcol_PassportNoE, xlcol_PCategory, xlcol_PIssueDate,xlcol_PExpiryDate,
+                //, xlcol_PIssueCountry, xlcol_PIssuePlaceE,
+            xlcol_NPresent, xlcol_NPrevious, xlcol_PassportProf,xlcol_Education, //xlcol_Language1, xlcol_Language2,
+            xlcol_Emirates,
+            //xlcol_Area, xlcol_City,xlcol_BuildingE, xlcol_StreetE, xlcol_FlatE,xlcol_POBox,
+            //xlcol_OffPhoneNo,xlcol_ResPhoneNo, xlcol_MobileNo, xlcol_TeleNoAbroad, 
+           // xlcol_PersEmail, xlcol_AddressE, xlcol_PerAddressE, xlcol_Email,
             xlcol_SponsorCode,
             xlcol_LocLib5,
             xlcol_IntlJoiningDate
@@ -1561,18 +1563,18 @@ namespace DBox_CS.Core.BL
                             {
                                 StrMaritalStat = row[xlcol_MaritalStat].ToString();
 
-                                if (!ValidateField(xlcol_MaritalStat, StrMaritalStat, isUpdate, ref fieldErr, ref lookupCodeObj))
-                                {
-                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_MaritalStat, StrMaritalStat, isUpdate, ref fieldErr, ref lookupCodeObj))
+                                //{
+                                ////    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     MaritalStatusCode = Convert.ToInt32(lookupCodeObj);
 
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_MaritalStat] + " " + StrMaritalStat + "]");
 
-                                }
+                                //}
 
                             }
 
@@ -1820,11 +1822,11 @@ namespace DBox_CS.Core.BL
 
                                 if (strEditMode != "EDIT")
                                 {
-                                    if (CheckIfMandatory(xlcol_PIssuePlaceE, enmXlImportTables.Employee))
-                                    {
-                                        AppendLineError(nRowNo, rowErrInfo, dictTitleNames[xlcol_PIssuePlaceE] + " cannot be blank");
-                                        bskipInsertUpdate = true;
-                                    }
+                                    //if (CheckIfMandatory(xlcol_PIssuePlaceE, enmXlImportTables.Employee))
+                                    //{
+                                    //    AppendLineError(nRowNo, rowErrInfo, dictTitleNames[xlcol_PIssuePlaceE] + " cannot be blank");
+                                    //    bskipInsertUpdate = true;
+                                    //}
                                 }
                                 else if (drowEmpOld != null && drowEmpOld["PIssuePlaceE"] != DBNull.Value)
                                 {
@@ -1849,11 +1851,11 @@ namespace DBox_CS.Core.BL
 
                                 if (strEditMode != "EDIT")
                                 {
-                                    if (CheckIfMandatory(xlcol_PIssueCountry, enmXlImportTables.Employee))
-                                    {
-                                        AppendLineError(nRowNo, rowErrInfo, dictTitleNames[xlcol_PIssueCountry] + " cannot be blank");
-                                        bskipInsertUpdate = true;
-                                    }
+                                    //if (CheckIfMandatory(xlcol_PIssueCountry, enmXlImportTables.Employee))
+                                    //{
+                                    //    AppendLineError(nRowNo, rowErrInfo, dictTitleNames[xlcol_PIssueCountry] + " cannot be blank");
+                                    //    bskipInsertUpdate = true;
+                                    //}
                                 }
                                 else if (drowEmpOld != null && drowEmpOld["PIssueCountry"] != DBNull.Value)
                                 {
@@ -1865,18 +1867,18 @@ namespace DBox_CS.Core.BL
 
                                 StrPassportIssueCountry = row[xlcol_PIssueCountry].ToString();
 
-                                if (!ValidateField(xlcol_PIssueCountry, StrPassportIssueCountry, isUpdate, ref fieldErr, ref lookupCodeObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_PIssueCountry, StrPassportIssueCountry, isUpdate, ref fieldErr, ref lookupCodeObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     PassportIssueCountryCode = Convert.ToString(lookupCodeObj);
 
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_PIssueCountry] + " " + StrPassportIssueCountry + "]");
 
-                                }
+                                //}
 
                             }
 
@@ -3456,17 +3458,17 @@ namespace DBox_CS.Core.BL
 
                                 StrCity = row[xlcol_City].ToString();
 
-                                if (!ValidateField(xlcol_City, StrCity, isUpdate, ref fieldErr, ref lookupCodeObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_City, StrCity, isUpdate, ref fieldErr, ref lookupCodeObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     CityCode = Convert.ToString(lookupCodeObj);
 
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_City] + " " + StrCity + "]");
-                                }
+                                //}
                             }
                         }
 
@@ -3494,17 +3496,17 @@ namespace DBox_CS.Core.BL
 
                                 StrArea = row[xlcol_Area].ToString();
 
-                                if (!ValidateField(xlcol_Area, StrArea, isUpdate, ref fieldErr, ref lookupCodeObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_Area, StrArea, isUpdate, ref fieldErr, ref lookupCodeObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     AreaCode = Convert.ToString(lookupCodeObj);
 
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_Area] + " " + StrArea + "]");
-                                }
+                                //}
                             }
                         }
 
@@ -3531,15 +3533,15 @@ namespace DBox_CS.Core.BL
                             {
                                 StrStreetE = row[xlcol_StreetE].ToString();
 
-                                if (!ValidateField(xlcol_StreetE, StrStreetE, isUpdate, ref fieldErr, ref emptyObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_StreetE, StrStreetE, isUpdate, ref fieldErr, ref emptyObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_StreetE] + " " + StrStreetE + "]");
-                                }
+                                //}
                             }
                         }
 
@@ -3561,15 +3563,15 @@ namespace DBox_CS.Core.BL
                             {
                                 StrStreetA = row[xlcol_StreetA].ToString();
 
-                                if (!ValidateField(xlcol_StreetA, StrStreetA, isUpdate, ref fieldErr, ref emptyObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_StreetA, StrStreetA, isUpdate, ref fieldErr, ref emptyObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_StreetA] + " " + StrStreetA + "]");
-                                }
+                               // }
                             }
                         }
 
@@ -3596,15 +3598,15 @@ namespace DBox_CS.Core.BL
                             {
                                 StrBuildingE = row[xlcol_BuildingE].ToString();
 
-                                if (!ValidateField(xlcol_BuildingE, StrBuildingE, isUpdate, ref fieldErr, ref emptyObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_BuildingE, StrBuildingE, isUpdate, ref fieldErr, ref emptyObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_BuildingE] + " " + StrBuildingE + "]");
-                                }
+                                //}
                             }
                         }
 
@@ -3626,15 +3628,15 @@ namespace DBox_CS.Core.BL
                             {
                                 StrBuildingA = row[xlcol_BuildingA].ToString();
 
-                                if (!ValidateField(xlcol_BuildingA, StrBuildingA, isUpdate, ref fieldErr, ref emptyObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_BuildingA, StrBuildingA, isUpdate, ref fieldErr, ref emptyObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_BuildingA] + " " + StrBuildingA + "]");
-                                }
+                               // }
                             }
                         }
 
@@ -3661,15 +3663,15 @@ namespace DBox_CS.Core.BL
                             {
                                 StrFlatE = row[xlcol_FlatE].ToString();
 
-                                if (!ValidateField(xlcol_FlatE, StrFlatE, isUpdate, ref fieldErr, ref emptyObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_FlatE, StrFlatE, isUpdate, ref fieldErr, ref emptyObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_FlatE] + " " + StrFlatE + "]");
-                                }
+                                //}
                             }
                         }
 
@@ -3691,15 +3693,15 @@ namespace DBox_CS.Core.BL
                             {
                                 StrFlatA = row[xlcol_FlatA].ToString();
 
-                                if (!ValidateField(xlcol_FlatA, StrFlatA, isUpdate, ref fieldErr, ref emptyObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_FlatA, StrFlatA, isUpdate, ref fieldErr, ref emptyObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_FlatA] + " " + StrFlatA + "]");
-                                }
+                                //}
                             }
 
                         }
@@ -4755,20 +4757,20 @@ namespace DBox_CS.Core.BL
                             {
                                 StrAuxDate1 = row[xlcol_AuxDate1].ToString();
 
-                                if (!ValidateField(xlcol_AuxDate1, StrAuxDate1, isUpdate, ref fieldErr, ref emptyObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_AuxDate1, StrAuxDate1, isUpdate, ref fieldErr, ref emptyObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
 
 
                                     AuxDate1Value = GetValidDateTime(StrAuxDate1);
 
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_AuxDate1] + " " + AuxDate1Value.ToString("dd/MM/yyyy") + "]");
 
-                                }
+                                //}
                             }
                         }
                         if (CheckIfColumnExists(mydt, xlcol_AuxDate2))
@@ -4789,20 +4791,20 @@ namespace DBox_CS.Core.BL
                             {
                                 StrAuxDate2 = row[xlcol_AuxDate2].ToString();
 
-                                if (!ValidateField(xlcol_AuxDate2, StrAuxDate2, isUpdate, ref fieldErr, ref emptyObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_AuxDate2, StrAuxDate2, isUpdate, ref fieldErr, ref emptyObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
 
 
                                     AuxDate2Value = GetValidDateTime(StrAuxDate2);
 
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_AuxDate2] + " " + AuxDate2Value.ToString("dd/MM/yyyy") + "]");
 
-                                }
+                               // }
                             }
                         }
                         if (CheckIfColumnExists(mydt, xlcol_AuxDate3))
@@ -4959,17 +4961,17 @@ namespace DBox_CS.Core.BL
 
                                 StrAuxLib2 = row[xlcol_AuxLib2].ToString();
 
-                                if (!ValidateField(xlcol_AuxLib2, StrAuxLib2, isUpdate, ref fieldErr, ref lookupCodeObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_AuxLib2, StrAuxLib2, isUpdate, ref fieldErr, ref lookupCodeObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     AuxLib2Code = Convert.ToString(lookupCodeObj);
 
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_AuxLib2] + " " + StrAuxLib2 + "]");
-                                }
+                                //}
                             }
                         }
                         if (CheckIfColumnExists(mydt, xlcol_AuxLib3))
@@ -4991,17 +4993,17 @@ namespace DBox_CS.Core.BL
 
                                 StrAuxLib3 = row[xlcol_AuxLib3].ToString();
 
-                                if (!ValidateField(xlcol_AuxLib3, StrAuxLib3, isUpdate, ref fieldErr, ref lookupCodeObj))
-                                {
-                                    AppendLineError(nRowNo, rowErrInfo, fieldErr);
+                                //if (!ValidateField(xlcol_AuxLib3, StrAuxLib3, isUpdate, ref fieldErr, ref lookupCodeObj))
+                                //{
+                                //    AppendLineError(nRowNo, rowErrInfo, fieldErr);
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     AuxLib3Code = Convert.ToString(lookupCodeObj);
 
                                     strBuildrAudit.Append(",[ " + dictTitleNames[xlcol_AuxLib3] + " " + StrAuxLib3 + "]");
-                                }
+                                //}
                             }
                         }
                         if (CheckIfColumnExists(mydt, xlcol_AuxLib4))
@@ -9074,10 +9076,10 @@ namespace DBox_CS.Core.BL
                     }
                     break;
                 case xlcol_Religion:
-                    if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
-                    {
-                        isValid = false; break;
-                    }
+                    //if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
+                    //{
+                    //    isValid = false; break;
+                    //}
                     break;
                 case xlcol_DateOfBirth:
 
@@ -9108,10 +9110,10 @@ namespace DBox_CS.Core.BL
                 case xlcol_PassportNoE: break;
                 case xlcol_PIssuePlaceE: break;
                 case xlcol_PIssueCountry:
-                    if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
-                    {
-                        isValid = false; break;
-                    }
+                    //if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
+                    //{
+                    //    isValid = false; break;
+                    //}
                     break;
                 case xlcol_PIssueDate:
                     if (!ValidateDateTime(Value.ToString(), out dateValue, ref errmsg))
@@ -9222,12 +9224,12 @@ namespace DBox_CS.Core.BL
                     break;
                 case xlcol_EmpNameA: break;
                 case xlcol_NickNameE:
-                    hasSpecial = hasSpecialChar(Value.ToString());
-                    if (hasSpecial == true)
-                    {
-                        fieldErr = "Special characters are not allowed in " + dictTitleNames[FieldName];
-                        isValid = false; break;
-                    }
+                    //hasSpecial = hasSpecialChar(Value.ToString());
+                    //if (hasSpecial == true)
+                    //{
+                    //    fieldErr = "Special characters are not allowed in " + dictTitleNames[FieldName];
+                    //    isValid = false; break;
+                    //}
                     break;
                 case xlcol_NickNameA: break;
                 case xlcol_RelType:
@@ -9250,40 +9252,40 @@ namespace DBox_CS.Core.BL
                 case xlcol_PIssuePlaceA: break;
                 case xlcol_PerAddressA: break;
                 case xlcol_Skill1:
-                    if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
-                    {
-                        isValid = false; break;
-                    }
+                    //if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
+                    //{
+                    //    isValid = false; break;
+                    //}
                     break;
                 case xlcol_Skill2:
-                    if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
-                    {
-                        isValid = false; break;
-                    }
+                    //if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
+                    //{
+                    //    isValid = false; break;
+                    //}
                     break;
                 case xlcol_Skill3:
-                    if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
-                    {
-                        isValid = false; break;
-                    }
+                    //if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
+                    //{
+                    //    isValid = false; break;
+                    //}
                     break;
                 case xlcol_Language1:
-                    if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
-                    {
-                        isValid = false; break;
-                    }
+                    //if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
+                    //{
+                    //    isValid = false; break;
+                    //}
                     break;
                 case xlcol_Language2:
-                    if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
-                    {
-                        isValid = false; break;
-                    }
+                    //if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
+                    //{
+                    //    isValid = false; break;
+                    //}
                     break;
                 case xlcol_Language3:
-                    if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
-                    {
-                        isValid = false; break;
-                    }
+                    //if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
+                    //{
+                    //    isValid = false; break;
+                    //}
                     break;
                 case xlcol_VisaType:
                     if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
@@ -9458,10 +9460,10 @@ namespace DBox_CS.Core.BL
                 case xlcol_POBox: break;
                 case xlcol_PagerNo: break;
                 case xlcol_BloodGroup:
-                    if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
-                    {
-                        isValid = false; break;
-                    }
+                    //if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
+                    //{
+                    //    isValid = false; break;
+                    //}
                     break;
                 case xlcol_FaxNo: break;
                 case xlcol_NextofKinA: break;
