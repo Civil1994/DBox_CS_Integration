@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBox_CS.IntegrationApp", "DBox_CS.IntegrationApp\DBox_CS.IntegrationApp.csproj", "{48D73F9C-C298-4FC7-9232-893D6C973BAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBox_CS.IntegrationService", "DBox_CS.IntegrationService\DBox_CS.IntegrationService.csproj", "{C537430F-5612-40BA-B83C-AF321C3B0B24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,14 @@ Global
 		{6F560B34-C943-473C-B625-13F5B95BE58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F560B34-C943-473C-B625-13F5B95BE58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F560B34-C943-473C-B625-13F5B95BE58A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48D73F9C-C298-4FC7-9232-893D6C973BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48D73F9C-C298-4FC7-9232-893D6C973BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48D73F9C-C298-4FC7-9232-893D6C973BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48D73F9C-C298-4FC7-9232-893D6C973BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C537430F-5612-40BA-B83C-AF321C3B0B24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C537430F-5612-40BA-B83C-AF321C3B0B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C537430F-5612-40BA-B83C-AF321C3B0B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C537430F-5612-40BA-B83C-AF321C3B0B24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
