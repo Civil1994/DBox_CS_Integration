@@ -23,106 +23,78 @@ namespace DBox_CS.Core.BL
         string errmsg = "";
         String sQry = String.Empty;
         private int result = 0;
-        internal DataTable GetEmployeeForExportToUniFocus()
+        
+        internal EmployeePushDTO ConvertToEmployeePushDto(DataRow drow)
         {
-            string errmsg = "";
-            DataTable dt = new DataTable();
-            string sQuery = "USP_UFIExport_GetEmployeeForPosting";
+            EmployeePushDTO empDTO = new EmployeePushDTO();
 
-            SqlParameter[] Params = null;
+            empDTO.EmpCode = drow["EmpCode"] == DBNull.Value ? "" : drow["EmpCode"].ToString();
+            empDTO.EmpNameA = drow["EmpNameA"] == DBNull.Value ? "" : drow["EmpNameA"].ToString();
 
-            if (!ConnectionFunctions.Connect_SQLDataTable(ref dt, sQuery, ref errmsg, Params, CommandType.StoredProcedure))
-            {
-                Common.LogAction(" GetEmployeeForExportToUniFocus error. Details:" + errmsg);
-            }
+            // English Name
+            empDTO.FNameE = drow["FNameE"] == DBNull.Value ? "" : drow["FNameE"].ToString();
+            empDTO.SNameE = drow["SNameE"] == DBNull.Value ? "" : drow["SNameE"].ToString();
+            empDTO.NickNameE = drow["NickNameE"] == DBNull.Value ? "" : drow["NickNameE"].ToString();
+            empDTO.GrandFatherE = drow["GrandFatherE"] == DBNull.Value ? "" : drow["GrandFatherE"].ToString();
+            empDTO.FamilyNameE = drow["FamilyNameE"] == DBNull.Value ? "" : drow["FamilyNameE"].ToString();
 
-            return dt;
-        }
+            // Arabic Name
+            empDTO.FNameA = drow["FNameA"] == DBNull.Value ? "" : drow["FNameA"].ToString();
+            empDTO.SNameA = drow["SNameA"] == DBNull.Value ? "" : drow["SNameA"].ToString();
+            empDTO.NickNameA = drow["NickNameA"] == DBNull.Value ? "" : drow["NickNameA"].ToString();
+            empDTO.GrandFatherA = drow["GrandFatherA"] == DBNull.Value ? "" : drow["GrandFatherA"].ToString();
+            empDTO.FamilyNameA = drow["FamilyNameA"] == DBNull.Value ? "" : drow["FamilyNameA"].ToString();
+            empDTO.MotherNameA = drow["MotherNameA"] == DBNull.Value ? "" : drow["MotherNameA"].ToString();
 
-        internal UFEmployeeDTO ConvertToEmployeeDto(DataRow drow)
-        {
-            UFEmployeeDTO empDTO = new UFEmployeeDTO();
+            // Location / Address
+            empDTO.BirthPlaceA = drow["BirthPlaceA"] == DBNull.Value ? "" : drow["BirthPlaceA"].ToString();
+            empDTO.PIssuePlaceA = drow["PIssuePlaceA"] == DBNull.Value ? "" : drow["PIssuePlaceA"].ToString();
+            empDTO.BuildingA = drow["BuildingA"] == DBNull.Value ? "" : drow["BuildingA"].ToString();
+            empDTO.AddressA = drow["AddressA"] == DBNull.Value ? "" : drow["AddressA"].ToString();
+            empDTO.PerAddressA = drow["PerAddressA"] == DBNull.Value ? "" : drow["PerAddressA"].ToString();
 
-            empDTO.employeeId = drow["EmployeeId"] == DBNull.Value ? "" : drow["EmployeeId"].ToString();
-            empDTO.altId = drow["AltId"] == DBNull.Value ? "" : drow["AltId"].ToString();
-            empDTO.badgeNo = drow["BadgeNo"] == DBNull.Value ? "" : drow["BadgeNo"].ToString();
-            empDTO.firstName = drow["FirstName"] == DBNull.Value ? "" : drow["FirstName"].ToString();
-            empDTO.middleName = drow["MiddleName"] == DBNull.Value ? "" : drow["MiddleName"].ToString();
-            empDTO.lastName = drow["LastName"] == DBNull.Value ? "" : drow["LastName"].ToString();
-            empDTO.employeeType = drow["EmployeeType"] == DBNull.Value ? "" : drow["EmployeeType"].ToString();
-            empDTO.hireDate = drow["HireDate"] == DBNull.Value ? "" : drow["HireDate"].ToString();
-            empDTO.seniorityDate = drow["SeniorityDate"] == DBNull.Value ? "" : drow["SeniorityDate"].ToString();
-            empDTO.statusTypeCode = drow["StatusTypeCode"] == DBNull.Value ? "" : drow["StatusTypeCode"].ToString();
-            empDTO.hoursAvailable = drow["HoursAvailable"] == DBNull.Value ? "0" : drow["HoursAvailable"].ToString();
-            empDTO.statusChangeReasonCode = drow["StatusChangeReasonCode"] == DBNull.Value ? "" : drow["StatusChangeReasonCode"].ToString();
-            empDTO.workClassCode = drow["WorkClassCode"] == DBNull.Value ? "" : drow["WorkClassCode"].ToString();
-            empDTO.primaryClassCode = drow["PrimaryClassCode"] == DBNull.Value ? "" : drow["PrimaryClassCode"].ToString();
-            empDTO.secondaryClassCode = drow["SecondaryClassCode"] == DBNull.Value ? "" : drow["SecondaryClassCode"].ToString();
-            empDTO.birthDate = drow["BirthDate"] == DBNull.Value ? "" : drow["BirthDate"].ToString();
-            empDTO.terminationDate = drow["TerminationDate"] == DBNull.Value ? "" : drow["TerminationDate"].ToString();
-            empDTO.leaveOfAbsenceDate = drow["LeaveOfAbsenceDate"] == DBNull.Value ? "" : drow["LeaveOfAbsenceDate"].ToString();
-            empDTO.leaveOfAbsenceReturnDate = drow["LeaveOfAbsenceReturnDate"] == DBNull.Value ? "" : drow["LeaveOfAbsenceReturnDate"].ToString();
-            empDTO.reHireDate = drow["ReHireDate"] == DBNull.Value ? "" : drow["ReHireDate"].ToString();
-            empDTO.gender = drow["Gender"] == DBNull.Value ? "" : drow["Gender"].ToString();
-            empDTO.tipped = drow["Tipped"] == DBNull.Value ? "" : drow["Tipped"].ToString();
-            empDTO.address = drow["Address"] == DBNull.Value ? "" : drow["Address"].ToString();
-            empDTO.address2 = drow["Address2"] == DBNull.Value ? "" : drow["Address2"].ToString();
-            empDTO.city = drow["City"] == DBNull.Value ? "" : drow["City"].ToString();
-            empDTO.state = drow["State"] == DBNull.Value ? "" : drow["State"].ToString();
-            empDTO.zip = drow["Zip"] == DBNull.Value ? "" : drow["Zip"].ToString();
-            empDTO.homePhone = drow["HomePhone"] == DBNull.Value ? "" : drow["HomePhone"].ToString();
-            empDTO.mobilePhone = drow["MobilePhone"] == DBNull.Value ? "" : drow["MobilePhone"].ToString();
-            empDTO.email = drow["Email"] == DBNull.Value ? "" : drow["Email"].ToString();
-            empDTO.emergencyContact = drow["EmergencyContact"] == DBNull.Value ? "" : drow["EmergencyContact"].ToString();
-            empDTO.emergencyPhone = drow["EmergencyPhone"] == DBNull.Value ? "" : drow["EmergencyPhone"].ToString();
-            empDTO.propertyCode = drow["PropertyCode"] == DBNull.Value ? "" : drow["PropertyCode"].ToString();
+            // Identity
+            empDTO.UIDNo = drow["UIDNo"] == DBNull.Value ? "" : drow["UIDNo"].ToString();
+            empDTO.NationalID = drow["NationalID"] == DBNull.Value ? "" : drow["NationalID"].ToString();
 
+            // Residence / Labour
+            empDTO.ResidenceNo = drow["ResidenceNo"] == DBNull.Value ? "" : drow["ResidenceNo"].ToString();
+            empDTO.ResIssuePlace = drow["ResIssuePlace"] == DBNull.Value ? "" : drow["ResIssuePlace"].ToString();
+            empDTO.ResIssueDate = drow["ResIssueDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(drow["ResIssueDate"]);
+            empDTO.ResExpDate = drow["ResExpDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(drow["ResExpDate"]);
 
-            UFReconcileJobDetailsDTO jobDetailsDTO = new UFReconcileJobDetailsDTO();
+            empDTO.LabCardNo = drow["LabCardNo"] == DBNull.Value ? "" : drow["LabCardNo"].ToString();
+            empDTO.LCIssuePlace = drow["LCIssuePlace"] == DBNull.Value ? "" : drow["LCIssuePlace"].ToString();
+            empDTO.LCExpDate = drow["LCExpDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(drow["LCExpDate"]);
 
-            jobDetailsDTO.jobCode = drow["JobCode"] == DBNull.Value ? "" : drow["JobCode"].ToString();
-            jobDetailsDTO.jobDate = drow["JobDate"] == DBNull.Value ? "" : drow["JobDate"].ToString();
-            //jobDetailsDTO.jobRank = drow["JobRank"] == DBNull.Value ? "0" : drow["JobRank"].ToString();
-            jobDetailsDTO.rateType = drow["RateType"] == DBNull.Value ? "" : drow["RateType"].ToString();
-            //jobDetailsDTO.hourlyRate = drow["HourlyRate"] == DBNull.Value ? "0" : drow["HourlyRate"].ToString();
-            jobDetailsDTO.annualRate = drow["AnnualRate"] == DBNull.Value ? "" : drow["AnnualRate"].ToString();
-            //jobDetailsDTO.pieceRate = drow["PieceRate"] == DBNull.Value ? "0" : drow["PieceRate"].ToString();
-            //jobDetailsDTO.contractHours = drow["ContractHours"] == DBNull.Value ? "0" : drow["ContractHours"].ToString();
-            //jobDetailsDTO.contractDays = drow["ContractDays"] == DBNull.Value ? "0" : drow["ContractDays"].ToString();
-            jobDetailsDTO.rateDate = drow["RateDate"] == DBNull.Value ? "" : drow["RateDate"].ToString();
-            jobDetailsDTO.jobOrder = drow["JobOrder"] == DBNull.Value ? "" : drow["JobOrder"].ToString();
-            //jobDetailsDTO.deactivationDate = drow["DeactivationDate"] == DBNull.Value ? "" : drow["DeactivationDate"].ToString();
+            // Visa
+            empDTO.VisaNo = drow["VisaNo"] == DBNull.Value ? "" : drow["VisaNo"].ToString();
+            empDTO.VisaIssueDate = drow["VisaIssueDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(drow["VisaIssueDate"]);
+            empDTO.VisaExpDate = drow["VisaExpDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(drow["VisaExpDate"]);
 
+            // Auxiliary
+            empDTO.AuxDate3 = drow["AuxDate3"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(drow["AuxDate3"]);
+            empDTO.AuxDate4 = drow["AuxDate4"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(drow["AuxDate4"]);
+            empDTO.AuxDate5 = drow["AuxDate5"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(drow["AuxDate5"]);
 
-            empDTO.jobs= new List<UFReconcileJobDetailsDTO>();
-            empDTO.jobs.Add(jobDetailsDTO);
-
-            //UFEmployeeCustomDataDTO empcustomDataDTO = new UFEmployeeCustomDataDTO();
-            //empcustomDataDTO.key = "";
-            //empcustomDataDTO.value = "";
-
-            //empDTO.customDataList = new List<UFEmployeeCustomDataDTO>();
-            //empDTO.customDataList.Add(empcustomDataDTO);
-
+            empDTO.AuxString7 = drow["AuxString7"] == DBNull.Value ? "" : drow["AuxString7"].ToString();
+            empDTO.AuxLib5 = drow["AuxLib5"] == DBNull.Value ? "" : drow["AuxLib5"].ToString();
+            empDTO.AuxLib6 = drow["AuxLib6"] == DBNull.Value ? "" : drow["AuxLib6"].ToString();
 
             return empDTO;
-
         }
 
-        internal void UploadeEmployeeToUF(ref int ufiProcessId)
+        public void UploadeEmployeeToDBOX()
         {
-
-
-            //int ufiProcessId = 0;
+            int DBOXIProcessId;
             bool hasProcessError = false;
-            string strprocessRemarks = "";
 
-            ufiProcessId = Common.CreateUFIProcessLogEntry("Employee Upload to UF", "");
+            DBOXIProcessId = Common.CreateDBoxIProcessLogEntry("Employee Push to DBOX");
 
 
-            if (ufiProcessId == 0)
+            if (DBOXIProcessId == 0)
             {
-                Common.LogAction("Error generating UFI Process ID");
+                Common.LogAction("Error generating DBOXI Process ID");
                 return;
             }
 
@@ -132,211 +104,212 @@ namespace DBox_CS.Core.BL
                 string apikeyheader = ConfigurationManager.AppSettings["UFApiSettings.APIKeyHeader"].ToString();
                 string apikey = ConfigurationManager.AppSettings["UFApiSettings.APIKey"].ToString();
 
+                string clientId = ConfigurationManager.AppSettings["DBOXApiSettings.ClientId"].ToString();
+                string clientSecret = ConfigurationManager.AppSettings["DBOXApiSettings.ClientSecret"].ToString();
 
-                if (string.IsNullOrEmpty(apikeyheader))
+
+                if (string.IsNullOrEmpty(clientId))
                 {
-                    throw new Exception("API Key Header missing.");
+                    throw new Exception("Cliend ID is missing.");
                 }
-                if (string.IsNullOrEmpty(apikey))
+                if (string.IsNullOrEmpty(clientSecret))
                 {
-                    throw new Exception("API Key missing.");
+                    throw new Exception("Client Secret missing.");
                 }
 
 
                 _httpClient = new HttpClient();
                 _apiClient = new ApiClient(_httpClient, apikey, apikeyheader);
 
-
-
-                bool continuePosting = false;
-                DataTable empdt = GetEmployeeForExportToUniFocus();
+                DataTable empdt = GetEmployeeForExportToDBox();
 
                 if (empdt == null || empdt.Rows.Count == 0)
                 {
                     Common.LogAction("No Employee data to Upload.");
-                    Common.UpdateRemarksToUFIExportProcessLogDetails(ufiProcessId, "", "", "No Employee data to Upload.");
+                    Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, "", "", "No Employee data to Upload.");
                     return;
                 }
 
-                LogExportData(empdt, ufiProcessId);
+                LogDBOXIExportData(empdt, DBOXIProcessId);
 
+                EmployeePushModel employeesData = new EmployeePushModel();
+                employeesData.apiKey = apikey;
+                employeesData.importId = "employeesdata";
+                employeesData.groupCompany = "";
 
-                var distinctUFPropertyCodes = empdt.AsEnumerable().Select(row => row.Field<string>("PropertyCode")).Distinct().ToList();
+                List<EmployeePushDTO> empList = new List<EmployeePushDTO>();
+                EmployeePushDTO empDTO = new EmployeePushDTO();
 
-                string empcode = "";
-                UFEmployeeDTO empDTO = new UFEmployeeDTO();
-                foreach (string ufpc in distinctUFPropertyCodes)
+                string EmpId = string.Empty;
+                foreach (DataRow drow in empdt.Rows)
                 {
-                    continuePosting = true;
-
-                    if (string.IsNullOrEmpty(ufpc))
+                    empDTO = new EmployeePushDTO();
+                    empDTO = ConvertToEmployeePushDto(drow);
+                    empList.Add(empDTO);
+                    EmpId = drow["EmpId"].ToString();
+                    try
                     {
-                        DataRow[] drows = empdt.Select("ISNULL(PropertyCode,'')= ''");
+                        employeesData.importData = empList;
+                        var response = _apiClient.PostEmployeeData(employeesData);
 
-                        foreach (DataRow drow in drows)
+                        if (response == null)
                         {
                             hasProcessError = true;
-                            Common.LogErrorToUFIExportProcessLogDetails(ufiProcessId, drow["EmployeeId"].ToString(), "", "No Valid Property Code found for Employee " + drow["EmployeeId"].ToString());
+                            Common.LogAction("api response is null");
+                            Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, empDTO.EmpCode, "", "api response is null", true);
                         }
-                    }
-                    else
-                    {
-
-
-                        Common.LogAction("Posting Employees for PropertyCode " + ufpc);
-
-                        DataRow[] drows = empdt.Select("PropertyCode= '" + ufpc + "'");
-
-                        foreach (DataRow drow in drows)
+                        else
                         {
-                            Common.LogAction("Posting Employee " + drow["EmployeeId"].ToString());
-
-                            try
+                            if (response.IsSuccessStatusCode)
                             {
-                                empDTO = ConvertToEmployeeDto(drow);
-                                empcode = empDTO.employeeId.ToString();
 
-                                var response = _apiClient.PostEmployeeData(empDTO, ufpc, empcode);
-
-                                if (response == null)
+                                Common.LogAction("Posted " + empDTO.EmpCode);
+                                Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, empDTO.EmpCode, "", "Posted Successfully", false);
+                                Update_EmpLastExportDateTime(empDTO.EmpCode, EmpId);
+                            }
+                            else
+                            {
+                                if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
                                 {
                                     hasProcessError = true;
-                                    Common.LogAction("api response is null");
-                                    Common.LogErrorToUFIExportProcessLogDetails(ufiProcessId, empDTO.employeeId.ToString(), "", "api response is null");
+                                    Common.LogAction("Failure StatusCode " + ((int)response.StatusCode).ToString() + " bad request -Incorrect values.");
+                                    Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, empDTO.EmpCode, "", "Failure StatusCode " + ((int)response.StatusCode).ToString() + " bad request -Incorrect values.");
+                                }
+                                else if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+                                {
+                                    hasProcessError = true;
+                                    Common.LogAction("Failure StatusCode " + ((int)response.StatusCode).ToString() + " forbidden request -Invalid 'dbox - api - secret'.");
+                                    Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, empDTO.EmpCode, "", "Failure StatusCode " + ((int)response.StatusCode).ToString() + " forbidden request -Invalid 'dbox - api - secret'.");
+                                }
+                                else if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                                {
+                                    hasProcessError = true;
+                                    Common.LogAction("Failure StatusCode " + ((int)response.StatusCode).ToString() + " internal server error - location Code does not exist");
+                                    Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, empDTO.EmpCode, "", "Failure StatusCode " + ((int)response.StatusCode).ToString() + " internal server error - location Code does not exist.");
                                 }
                                 else
                                 {
-                                    if (response.IsSuccessStatusCode)
-                                    {
+                                    hasProcessError = true;
+                                    Common.LogAction("Failure StatusCode " + ((int)response.StatusCode).ToString());
+                                    Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, empDTO.EmpCode, "", "Failure StatusCode " + ((int)response.StatusCode).ToString());
 
-                                        Common.LogAction("Posted " + empDTO.employeeId.ToString());
-                                        Common.UpdateRemarksToUFIExportProcessLogDetails(ufiProcessId, empDTO.employeeId.ToString(), "", "Posted Successfully");
-                                        Update_EmpLastExportDateTime(empDTO.employeeId.ToString(), DateTime.Now);
-                                    }
-                                    else
-                                    {
-
-
-                                        //var resultContent = response.Content.ReadAsStringAsync().Result;
-                                        //if (resultContent != null)
-                                        //{
-                                        //    var respMsg = JsonConvert.DeserializeObject<Message<string>>(resultContent);
-
-                                        //}
-
-                                        //200   successful operation
-                                        //400   bad request -Incorrect values.
-                                        //403   forbidden request -Invalid "unifocus-api-secret".
-                                        //500   internal server error - location Code does not exist.
-
-
-                                        if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
-                                        {
-                                            hasProcessError = true;
-                                            Common.LogAction("Failure StatusCode " + ((int)response.StatusCode).ToString() + " bad request -Incorrect values.");
-                                            Common.LogErrorToUFIExportProcessLogDetails(ufiProcessId, empDTO.employeeId.ToString(), "", "Failure StatusCode " + ((int)response.StatusCode).ToString() + " bad request -Incorrect values.");
-                                        }
-                                        else if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
-                                        {
-                                            hasProcessError = true;
-                                            Common.LogAction("Failure StatusCode " + ((int)response.StatusCode).ToString() + " forbidden request -Invalid 'unifocus - api - secret'.");
-                                            Common.LogErrorToUFIExportProcessLogDetails(ufiProcessId, empDTO.employeeId.ToString(), "", "Failure StatusCode " + ((int)response.StatusCode).ToString() + " forbidden request -Invalid 'unifocus - api - secret'. Further Employee Posting for Property Code '" + ufpc + "' Skipped due to Critical error. ");
-                                            continuePosting = false;
-                                        }
-                                        else if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
-                                        {
-                                            hasProcessError = true;
-                                            Common.LogAction("Failure StatusCode " + ((int)response.StatusCode).ToString() + " internal server error - location Code does not exist");
-                                            Common.LogErrorToUFIExportProcessLogDetails(ufiProcessId, empDTO.employeeId.ToString(), "", "Failure StatusCode " + ((int)response.StatusCode).ToString() + " internal server error - location Code does not exist. Further Employee Posting for Property Code '" + ufpc + "' Skipped due to Critical error. ");
-                                            continuePosting = false;
-                                        }
-                                        else
-                                        {
-                                            hasProcessError = true;
-                                            Common.LogAction("Failure StatusCode " + ((int)response.StatusCode).ToString());
-                                            Common.LogErrorToUFIExportProcessLogDetails(ufiProcessId, empDTO.employeeId.ToString(), "", "Failure StatusCode " + ((int)response.StatusCode).ToString());
-
-                                        }
-
-                                    }
                                 }
+
                             }
-                            catch (Exception ex)
-                            {
-                                hasProcessError = true;
-                                Common.LogAction("Error occured at Posting for Empcode "+ drow["EmployeeId"].ToString() + ". Error:" + ex.Message);
-                                Common.LogException(ex);
-                                Common.LogErrorToUFIExportProcessLogDetails(ufiProcessId, drow["EmployeeId"].ToString(), "", "Error occured at Posting. Error:" + ex.Message);
-                            }
-
-
-                            if (continuePosting == false)
-                            {
-                                break;
-                            }
-
-
                         }
                     }
-
+                    catch (Exception ex)
+                    {
+                        hasProcessError = true;
+                        Common.LogAction("Error occured at Posting for Empcode " + drow["EmpCode"].ToString() + ". Error:" + ex.Message);
+                        Common.LogException(ex);
+                        Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, drow["EmpCode"].ToString(), "", "Error occured at Posting. Error:" + ex.Message);
+                    }
                 }
+
+                
             }
             catch (Exception ex)
             {
-                strprocessRemarks = "An error occured. Check Process Log Details";
                 hasProcessError = true;
                 Common.LogAction("Error occured at Posting. Error:" + ex.Message);
                 Common.LogException(ex);
-                Common.LogErrorToUFIExportProcessLogDetails(ufiProcessId, "", "", "Error occured at Posting. Error:" + ex.Message);
+                Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, "", "", "Error occured at Posting. Error:" + ex.Message);
             }
 
            
-            Common.LogUFIProcessCompletion(ufiProcessId, strprocessRemarks,hasProcessError);
+            Common.LogUFIProcessCompletion(DBOXIProcessId, "Successfully pushed employee data",hasProcessError);
 
         }
 
-        private void LogExportData(DataTable dt,int ufiProcessId)
+        public DataTable GetEmployeeForExportToDBox()
+        {
+            DataTable dtEmpUpload = new DataTable();
+            string ErrMsg = "";
+
+            string sql = @"
+                SELECT e.EmpId, e.EmpCode, e.EmpNameA, e.FNameE, e.SNameE, e.NickNameE, e.GrandFatherE, e.FamilyNameE,
+                       e.FNameA, e.SNameA, e.NickNameA, e.GrandFatherA, e.FamilyNameA, e.MotherNameA,
+                       e.BirthPlaceA, e.PIssuePlaceA, e.UIDNo, e.BuildingA, e.AddressA, e.PerAddressA,
+                       e.ResidenceNo, e.ResIssuePlace, e.ResIssueDate, e.ResExpDate,
+                       e.NationalID, e.LabCardNo, e.LCIssuePlace, e.LCExpDate,
+                       e.VisaNo, e.VisaIssueDate, e.VisaExpDate,
+                       e.AuxDate3, e.AuxDate4, e.AuxDate5,
+                       e.AuxString7, e.AuxLib5, e.AuxLib6
+                FROM Employee e
+                INNER JOIN EmployeeSyncTracker_DBOXI t
+                    ON e.EmpID = t.EmpID
+                WHERE t.Employee_LastModifiedDateTime > t.Employee_LASTPUSHEDDTTM
+            ";
+
+            bool RetVal = ConnectionFunctions.Connect_SQLDataTable(ref dtEmpUpload, sql, ref ErrMsg);
+            if (RetVal == false)
+            {
+                return null;
+            }
+
+            return dtEmpUpload;
+        }
+
+        private void LogDBOXIExportData(DataTable dt, int dboxiProcessId)
         {
             try
             {
-                dt.Columns.Add("UFIProcessId", Type.GetType("System.Int32"));
-                dt.Columns.Add("InsertedDate", Type.GetType("System.DateTime"));
+                // Add required columns if not present
+                if (!dt.Columns.Contains("DBOXIProcessId"))
+                    dt.Columns.Add("DBOXIProcessId", typeof(int));
 
-                DateTime inserttime = DateTime.Now;
+                if (!dt.Columns.Contains("InsertedDate"))
+                    dt.Columns.Add("InsertedDate", typeof(DateTime));
+
+                if (!dt.Columns.Contains("ExportRawData"))
+                    dt.Columns.Add("ExportRawData", typeof(string));
+
+                if (!dt.Columns.Contains("ExportResponseData"))
+                    dt.Columns.Add("ExportResponseData", typeof(string));
+
+                DateTime insertTime = DateTime.Now;
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    row["UFIProcessId"] = ufiProcessId;
-                    row["InsertedDate"] = inserttime;
+                    row["DBOXIProcessId"] = dboxiProcessId;
+                    row["InsertedDate"] = insertTime;
+
+                    // Optional: if not already filled
+                    if (row["ExportRawData"] == DBNull.Value)
+                        row["ExportRawData"] = "";
+
+                    if (row["ExportResponseData"] == DBNull.Value)
+                        row["ExportResponseData"] = "";
                 }
 
-                dt.Columns["UFIProcessId"].SetOrdinal(0);
+                // Optional: Set column order (not mandatory but good practice)
+                dt.Columns["DBOXIProcessId"].SetOrdinal(0);
                 dt.Columns["InsertedDate"].SetOrdinal(1);
 
-                SqlConnection conn = new SqlConnection(ConnectionFunctions.GetConnectionString());
-
+                using (SqlConnection conn = new SqlConnection(ConnectionFunctions.GetConnectionString()))
                 using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn))
                 {
-                    bulkCopy.DestinationTableName = "dbo.UFI_EmployeeUploadDataLog";
+                    bulkCopy.DestinationTableName = "dbo.DBOXI_EmpUpdateExportLog";
 
-                    // Write from the source to the destination.
+                    foreach (DataColumn col in dt.Columns)
+                    {
+                        bulkCopy.ColumnMappings.Add(col.ColumnName, col.ColumnName);
+                    }
+
                     conn.Open();
                     bulkCopy.WriteToServer(dt);
                     conn.Close();
-
                 }
-
             }
             catch (Exception ex)
             {
-                Common.LogAction("Employee Upload data logging in LogExportData failed. Details:" + ex.Message);
+                Common.LogAction("DBOXI Export data logging failed. Details: " + ex.Message);
                 Common.LogException(ex);
             }
-
-
         }
 
-        private bool Update_EmpLastExportDateTime(string strEmpCode, DateTime lastUpdateDate)
+        private bool Update_EmpLastExportDateTime(string strEmpCode,string empId)
         {
             errmsg = "";
 
@@ -346,29 +319,26 @@ namespace DBox_CS.Core.BL
             }
             string actualEmpCode = strEmpCode;
 
-            if (!actualEmpCode.StartsWith("J"))
-            {
-                actualEmpCode = "J" + actualEmpCode; //appending J for JA employees Empcode which was removed the data fetch procecure
-            }
-           
 
-            sQry = "IF NOT EXISTS (SELECT * FROM UFI_EmpLastExportDate WHERE empcode='" + actualEmpCode + "')" +
+
+            sQry = "IF NOT EXISTS (SELECT * FROM EmployeeSyncTracker_DBOXI WHERE empcode='" + actualEmpCode + "')" +
                 "BEGIN " +
-                "   Insert into UFI_EmpLastExportDate ([EmpCode],[LastExportDateTime]) values ('" + actualEmpCode + "','" + lastUpdateDate.ToString("yyyyMMdd HH:mm") + "');" +
+                "   Insert into EmployeeSyncTracker_DBOXI ([EmpId],[EmpCode],[Employee_LastModifiedDateTime],[Employee_LASTPUSHEDDTTM],) values (" + empId + ",'" + actualEmpCode + "',GETDATE(),GETDATE());" +
                 "End " +
                 "Else " +
                 "BEGIN " +
-                "   UPDATE UFI_EmpLastExportDate set [LastExportDateTime] = '" + lastUpdateDate.ToString("yyyyMMdd HH:mm") + "' Where [EmpCode]='" + actualEmpCode + "';" +
+                "   UPDATE EmployeeSyncTracker_DBOXI set [Employee_LASTPUSHEDDTTM] = GETDATE() Where [EmpCode]='" + actualEmpCode + "' And EmpId = " + empId +" ;"+
                 "End ";
 
             RetVal = ConnectionFunctions.Connect_SQLNonQuery(ref result, sQry, ref errmsg);
 
             if (!RetVal)
             {
-                Common.LogAction("Update_EmpLastExportDateTime failed. Details: " + errmsg);
+                Common.LogAction("Update_EmployeeSyncTracker_DBOXI failed. Details: " + errmsg);
             }
 
             return RetVal;
         }
     }
+
 }

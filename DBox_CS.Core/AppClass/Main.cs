@@ -30,6 +30,7 @@ namespace DBox_CS.Core.AppClass
 
 
         ProcessIntitator _caller;
+        public string PushEmployeeAPIEndPoint;
 
         //EmployeeExportBL empexportbl;
         //LeaveExportBL leaveexportbl;
@@ -53,6 +54,11 @@ namespace DBox_CS.Core.AppClass
 
         public Main()
         {
+        }
+
+        public Main(ProcessIntitator pi)
+        {
+            _caller = pi;
         }
         public Main(ProcessIntitator pi, IAppSettings appSettings)
         {
@@ -137,6 +143,30 @@ namespace DBox_CS.Core.AppClass
                 Common.LogAction($"Dbox Exit Integration started.");
                 ExitMethods exitModel = new ExitMethods();
                 exitModel.PostEmployeeExit(empExitModel, Issponsorchange, Passcpy1, passcpy2);
+
+                Common.LogAction($"Dbox Exit Integration Completed.");
+            }
+
+            catch (Exception ex)
+            {
+                Common.LogAction(ex.Message);
+                throw ex;
+            }
+        }
+
+        public void PushEmployeesToDBOX()
+        {
+            try
+            {
+                EmployeeExportBL empExport = new EmployeeExportBL();
+                empExport.UploadeEmployeeToDBOX();
+
+                //EmployeeSyncService empSyncObj = new EmployeeSyncService();
+                //string jsonRetObj = empSyncObj.GetEmployeesToPushJson();
+                //if (jsonRetObj != null)
+                //{ 
+                //    //call api
+                //}
 
                 Common.LogAction($"Dbox Exit Integration Completed.");
             }

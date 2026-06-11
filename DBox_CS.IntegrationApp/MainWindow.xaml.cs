@@ -53,7 +53,7 @@ namespace DBox_CS.IntegrationApp
         }
 
 
-       
+
 
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace DBox_CS.IntegrationApp
                 objMain.tempOutputFolders = tempOutputFolders;
 
 
-                objMain.UploadeEmployeeToUF();
+                objMain.PushEmployeesToDBOX();
             }
             catch (Exception ex)
             {
@@ -84,13 +84,13 @@ namespace DBox_CS.IntegrationApp
                 MessageBox.Show($"An error occured at UploadEmpToUFButton. Details {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            
+
         }
-        
+
         #endregion
 
 
-    
+
         private void UploadLeaveToUFButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -103,7 +103,7 @@ namespace DBox_CS.IntegrationApp
                 objMain.tempOutputFolders = tempOutputFolders;
 
 
-                objMain.UploadeLeaveToUF();
+                //objMain.UploadeLeaveToUF();
             }
             catch (Exception ex)
             {
@@ -128,7 +128,7 @@ namespace DBox_CS.IntegrationApp
                 objMain.tempFolders = tempFolders;
 
 
-                objMain.DownloadFiles();
+                //objMain.DownloadFiles();
             }
             catch (Exception ex)
             {
@@ -150,7 +150,7 @@ namespace DBox_CS.IntegrationApp
                 objMain.tempDirectory = tempDirectory;
                 objMain.tempFolders = tempFolders;
 
-                objMain.ProcessFiles();
+                //objMain.ProcessFiles();
             }
             catch (Exception ex)
             {

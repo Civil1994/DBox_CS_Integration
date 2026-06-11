@@ -29,7 +29,7 @@ namespace DBox_CS.Core.AppClass
 
         static int iResult = 0;
         static string errmsg = "";
-        static string appFilesPath = @"D:\CIVILSOFT\Application Status Log\Log";//"D:\CIVILSOFT\Application Status Log\Log";//{ get => ConfigurationManager.AppSettings["AppFilesPath"]; }
+        static string appFilesPath { get => ConfigurationManager.AppSettings["AppFilesPath"]; }
 
         public const string logFileName = "Log.txt";
         public const string exceptionFilePath = "ExceptionLog.txt";
@@ -95,8 +95,8 @@ namespace DBox_CS.Core.AppClass
             try
             {
                 string logDirPath = Path.Combine(appFilesPath, "Log");
-                //string logFilePath = Path.Combine(logDirPath, logFileName);
-                string logFilePath = Path.Combine(appFilesPath, logFileName);
+                string logFilePath = Path.Combine(logDirPath, logFileName);
+
                 if (!Directory.Exists(logDirPath))
                 {
                     Directory.CreateDirectory(logDirPath);
@@ -1885,7 +1885,7 @@ namespace DBox_CS.Core.AppClass
 
         internal static int CreateDBoxIProcessLogEntry(string processName)
         {
-            Common.LogAction("CreateDBoxIProcessLogEntry started ");
+
             int dboxiprocessid = 0;
 
             string errorQuery = " INSERT INTO DBOXIProcessLog ([ProcessName],[StartTime]) VALUES (@ProcessName, GETDATE());    ";
@@ -1938,31 +1938,37 @@ namespace DBox_CS.Core.AppClass
             return value;
         }
 
-
-        public static void UpdateRemarksToUFIExportProcessLogDetails(int ufiprocessid, string empCode, string CSTransactionNo, string remarks)
+        public static void UpdateRemarksToDBOXIExportProcessLogDetails(int dboxiProcessId, string empCode, string csTransactionNo, string remarks, bool hasErrors = false, string errorText = null)
         {
-            string errorQuery = " IF NOT EXISTS (Select * from UFIExportProcessLogDetails where UFIProcessId=@UFIProcessId and EmpCode=@EmpCode and CSTransactionNo=@EmpCode)";
-            errorQuery += " BEGIN ";
-            errorQuery += " INSERT INTO UFIExportProcessLogDetails (UFIProcessId, EmpCode,CSTransactionNo, Remarks,LoggedDate) VALUES (@UFIProcessId, @EmpCode, @CSTransactionNo, @Remarks, GETDATE());    ";
-            errorQuery += " End ";
-            errorQuery += " Else ";
-            errorQuery += " BEGIN ";
-            errorQuery += " UPDATE UFIExportProcessLogDetails SET Remarks = Remarks + CHAR(13) + CHAR(10) + @Remarks where UFIProcessId=@UFIProcessId and EmpCode=@EmpCode and CSTransactionNo=@CSTransactionNo;    ";
-            errorQuery += " End ";
+            string query = @"IF NOT EXISTS (SELECT 1 FROM DBOXIExportProcessLogDetails WHERE DBOXIProcessId = @DBOXIProcessId AND EmpCode = @EmpCode AND CSTransactionNo = @CSTransactionNo)
+                BEGIN
+                    INSERT INTO DBOXIExportProcessLogDetails (DBOXIProcessId, EmpCode, CSTransactionNo, Remarks, LoggedDate, HasErrors, ErrorText)
+                    VALUES (@DBOXIProcessId, @EmpCode, @CSTransactionNo, @Remarks, GETDATE(), @HasErrors, @ErrorText)
+                END
+                ELSE
+                BEGIN
+                    UPDATE DBOXIExportProcessLogDetails SET Remarks = ISNULL(Remarks, '') + CHAR(13) + CHAR(10) + @Remarks, HasErrors = @HasErrors,ErrorText = CASE WHEN @ErrorText IS NOT NULL 
+                    THEN ISNULL(ErrorText, '') + CHAR(13) + CHAR(10) + @ErrorText ELSE ErrorText END, LoggedDate = GETDATE() WHERE DBOXIProcessId = @DBOXIProcessId AND EmpCode = @EmpCode 
+                        AND CSTransactionNo = @CSTransactionNo
+                END
+                ";
 
-            Dictionary<string, object> parameters = new Dictionary<string, object>    {
-                { "@UFIProcessId", ufiprocessid },
-                { "@EmpCode", empCode},
-                { "@CSTransactionNo", CSTransactionNo},
-                { "@Remarks", remarks }
+            Dictionary<string, object> parameters = new Dictionary<string, object>
+            {
+                { "@DBOXIProcessId", dboxiProcessId },
+                { "@EmpCode", empCode },
+                { "@CSTransactionNo", csTransactionNo },
+                { "@Remarks", remarks },
+                { "@HasErrors", hasErrors },
+                { "@ErrorText", (object)errorText ?? DBNull.Value }
             };
 
             string errorMsg = string.Empty;
-            bool result = ConnectionFunctions.ExecuteQuery(errorQuery, parameters, ref errorMsg);
+            bool result = ConnectionFunctions.ExecuteQuery(query, parameters, ref errorMsg);
 
             if (!result)
             {
-                Common.LogAction($"Failed to Save Remarks to UFIExportProcessLogDetails. Details: {errorMsg}");
+                Common.LogAction($"Failed to Save Remarks to DBOXIExportProcessLogDetails. Details: {errorMsg}");
             }
         }
 
@@ -2100,7 +2106,6 @@ namespace DBox_CS.Core.AppClass
             }
 
         }
-
         public static bool IsExist(string TableName, string Value, string Filter)
         {
             string errmsg = "";

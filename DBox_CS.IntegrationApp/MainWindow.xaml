@@ -31,7 +31,7 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <TextBlock Text="Unifocus Integration" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"  Style="{StaticResource HeaderTextBlock}"/>
+                <TextBlock Text="DBOX Integration" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"  Style="{StaticResource HeaderTextBlock}"/>
                 <Button x:Name="btnMinimize" Style="{StaticResource MinimizeStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="70 0 0 0" Click="btnMinimize_Click" FocusVisualStyle="{x:Null}"/>
                 <Button x:Name="btnClose" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Click="btnClose_Click" FocusVisualStyle="{x:Null}"/>
             </StackPanel>
@@ -43,7 +43,7 @@
                 <Button x:Name="UploadEmpToUFButton" Grid.Row="1" Margin="10"  Style="{StaticResource NormalButtonConfirm}"
                 HorizontalAlignment="Center" Width="222" Click="UploadEmpToUFButton_Click" FocusVisualStyle="{x:Null}">
                     <!--Click="DownloadButton_Click">-->
-                    <TextBlock Text="Employee Upload to UF" Style="{StaticResource ButtonTextBlockFooter}" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Employee Upload to DBOX" Style="{StaticResource ButtonTextBlockFooter}" HorizontalAlignment="Center"/>
                 </Button>
                 <Button x:Name="UploadLeaveToUFButton" Margin="10"  Style="{StaticResource NormalButtonConfirm}"
                     HorizontalAlignment="Center" Width="222" Click="UploadLeaveToUFButton_Click" FocusVisualStyle="{x:Null}">
