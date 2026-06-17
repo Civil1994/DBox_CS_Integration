@@ -337,6 +337,28 @@ namespace DBox_CS.Core.AppClass
             return Exist;
         }
 
+        public void PushDocumentToDBOX()
+        {
+            try
+            {
+                EmployeeExportBL empExport = new EmployeeExportBL();
+                empExport.UploadeEmployeeDocumentToDBOX();
 
+                //EmployeeSyncService empSyncObj = new EmployeeSyncService();
+                //string jsonRetObj = empSyncObj.GetEmployeesToPushJson();
+                //if (jsonRetObj != null)
+                //{ 
+                //    //call api
+                //}
+
+                Common.LogAction($"Dbox Exit Integration Completed.");
+            }
+
+            catch (Exception ex)
+            {
+                Common.LogAction(ex.Message);
+                throw ex;
+            }
+        }
     }
 }

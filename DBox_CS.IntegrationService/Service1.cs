@@ -22,7 +22,7 @@ namespace DBox_CS.IntegrationService
         
         private Timer Schedular;
 
-        private List<LocalFile> LocalFiles = new List<LocalFile>();
+       //private List<LocalFile> LocalFiles = new List<LocalFile>();
         static Dictionary<string, string> tempFolders;// List of folders to process files from
         static Dictionary<string, string> tempOutputFolders;// List of folders for output
         static string appFilesPath;
@@ -161,17 +161,18 @@ namespace DBox_CS.IntegrationService
                 }
                 if(svcToExList.Count==0 || svcToExList.Contains("EMPLOYEEEXPORT"))
                 {
-                    objMain.UploadeEmployeeToUF();
+                    //objMain.UploadeEmployeeToUF();
+                    objMain.PushEmployeesToDBOX();
                 }
                 if (svcToExList.Contains("LEAVEEXPORT"))
                 {
-                    objMain.UploadeLeaveToUF();
+                    //objMain.UploadeLeaveToUF();
                 }
                 if (svcToExList.Contains("DAILYHOURSIMPORT"))
                 {
                     //objMain.ImportDailyHoursFromUF();
                 }
-
+             
 
             }
             catch (Exception ex)

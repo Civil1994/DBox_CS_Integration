@@ -23,7 +23,8 @@ namespace DBox_CS.Core.APIClient
         private readonly string _apikey;
         private readonly string _clientId;
         private readonly string _clientSecret;
-
+        private readonly string _pushDocument;
+        private readonly string _authCode;
         public ApiClient(HttpClient httpClient, string apiKey, string apiKeyHeader)
         {
             //Force Set security protocol to use TLS 1.2(by default tls 1.2 if below line not mentioned)
@@ -36,13 +37,13 @@ namespace DBox_CS.Core.APIClient
             _httpClient.DefaultRequestHeaders.Add(apiKeyHeader, apiKey);
             
 
-            _baseurl = ConfigurationManager.AppSettings.Get("UFApiSettings.BaseUrl");
-            _pushEmployee = _baseurl + ConfigurationManager.AppSettings.Get("UFApiSettings.Endpoints.PushEmployee");
+            _baseurl = ConfigurationManager.AppSettings.Get("DBOXApiSettings.BaseUrl");
+            _pushEmployee = _baseurl + ConfigurationManager.AppSettings.Get("DBOXApiSettings.Endpoints.PushEmployee");
+            _pushDocument = _baseurl + ConfigurationManager.AppSettings.Get("DBOXApiSettings.Endpoints.PushDocuments");
 
-
-            _apikeyheader = ConfigurationManager.AppSettings["UFApiSettings.APIKeyHeader"].ToString();
-            _apikey = ConfigurationManager.AppSettings["UFApiSettings.APIKey"].ToString();
-
+            _apikeyheader = ConfigurationManager.AppSettings["DBOXApiSettings.APIKeyHeader"].ToString();
+            _apikey = ConfigurationManager.AppSettings["DBOXApiSettings.APIKey"].ToString();
+            _authCode = ConfigurationManager.AppSettings["DBOXApiSettings.AuthCode"].ToString();
             _clientId = ConfigurationManager.AppSettings["DBOXApiSettings.ClientId"].ToString();
             _clientSecret = ConfigurationManager.AppSettings["DBOXApiSettings.ClientSecret"].ToString();
         }
@@ -69,6 +70,35 @@ namespace DBox_CS.Core.APIClient
                 return json.access_token;
             }
         }
+
+        public string GetAccessToken1()
+        {
+            using (var client = new HttpClient())
+            {
+                var url = _baseurl + "oauth/v1token";
+
+                var formData = new List<KeyValuePair<string, string>>
+        {
+            new KeyValuePair<string, string>("client_id", _clientId),
+            new KeyValuePair<string, string>("client_secret", _clientSecret),
+            new KeyValuePair<string, string>("grant_type", "authorization_code"),
+            new KeyValuePair<string, string>("code", _authCode)
+        };
+
+                var content = new FormUrlEncodedContent(formData);
+
+                var response = client.PostAsync(url, content).Result;
+
+                var result = response.Content.ReadAsStringAsync().Result;
+
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception("Token API Error: " + result);
+
+                dynamic json = JsonConvert.DeserializeObject(result);
+
+                return json.access_token;
+            }
+        }
         public HttpResponseMessage PostEmployeeData(EmployeePushModel data)
         {
 
@@ -84,6 +114,38 @@ namespace DBox_CS.Core.APIClient
 
             return result;
 
+        }
+
+        public HttpResponseMessage PostEmployeeDocument(DocumentPushDTO data)
+        {
+            try
+            {
+
+                var json = JsonConvert.SerializeObject(data);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var request = new HttpRequestMessage(HttpMethod.Post, _pushDocument);
+
+                // API KEY must be in HEADER NAME, not Authorization
+                request.Headers.Clear();
+                request.Headers.Add("TOKEN", GetAccessToken1()); // 👈 IMPORTANT FIX
+
+                request.Headers.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+
+                request.Content = content;
+
+                var response = _httpClient.SendAsync(request).GetAwaiter().GetResult();
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                string e = ex.Message;
+           
+
+                throw; // rethrow so caller knows the request failed
+            }
         }
     }
 }

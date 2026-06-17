@@ -74,8 +74,8 @@ namespace DBox_CS.IntegrationApp
                 objMain.appFilesPath = appFilesPath;
                 objMain.tempOutputFolders = tempOutputFolders;
 
-
-                objMain.PushEmployeesToDBOX();
+                objMain.PushDocumentToDBOX();
+                //objMain.PushEmployeesToDBOX();
             }
             catch (Exception ex)
             {

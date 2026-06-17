@@ -84,6 +84,22 @@ namespace DBox_CS.Core.BL
             return empDTO;
         }
 
+        private DocumentPushDTO ConvertToDocumentPushDto(DataRow row)
+        {
+            return new DocumentPushDTO
+            {
+                employee_no = "112591",// row["employee_no"].ToString(),
+                section = row["section"].ToString(),
+                section_attribute = row["section_attribute"].ToString(),
+                attachment_file_name = row["attachment_file_name"].ToString(),
+                attachment_file_extension = Convert.ToString(row["attachment_file_extension"]).Trim().TrimStart('.'),
+                //AttachmentFileExtension = row["attachment_file_extension"].ToString(),
+                attachment = row["attachment"] != DBNull.Value
+                    ? Convert.ToBase64String((byte[])row["attachment"])
+                    : string.Empty
+            };
+        }
+
         public void UploadeEmployeeToDBOX()
         {
             int DBOXIProcessId;
@@ -205,6 +221,8 @@ namespace DBox_CS.Core.BL
                         Common.LogException(ex);
                         Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, drow["EmpCode"].ToString(), "", "Error occured at Posting. Error:" + ex.Message);
                     }
+           
+
                 }
 
                 
@@ -338,6 +356,239 @@ namespace DBox_CS.Core.BL
             }
 
             return RetVal;
+        }
+
+        private bool Update_EmpDocumentLastExportDateTime(string strEmpCode, string empId)
+        {
+            errmsg = "";
+
+            if (string.IsNullOrEmpty(strEmpCode))
+            {
+                return false;
+            }
+            string actualEmpCode = strEmpCode;
+
+
+
+            sQry = "IF NOT EXISTS (SELECT * FROM EmployeeSyncTracker_DBOXI WHERE empcode='" + actualEmpCode + "')" +
+                "BEGIN " +
+                "   Insert into EmployeeSyncTracker_DBOXI ([EmpId],[EmpCode],[Employee_LastModifiedDateTime],[EmpDocument_LASTPUSHEDDTTM],) values (" + empId + ",'" + actualEmpCode + "',GETDATE(),GETDATE());" +
+                "End " +
+                "Else " +
+                "BEGIN " +
+                "   UPDATE EmployeeSyncTracker_DBOXI set [EmpDocument_LASTPUSHEDDTTM] = GETDATE() Where [EmpCode]='" + actualEmpCode + "' And EmpId = " + empId + " ;" +
+                "End ";
+
+            RetVal = ConnectionFunctions.Connect_SQLNonQuery(ref result, sQry, ref errmsg);
+
+            if (!RetVal)
+            {
+                Common.LogAction("Update_EmployeeSyncTracker_DBOXI failed. Details: " + errmsg);
+            }
+
+            return RetVal;
+        }
+        public void UploadeEmployeeDocumentToDBOX()
+        {
+            int DBOXIProcessId;
+            bool hasProcessError = false;
+            Common.LogAction("Employee Document export started");
+            DBOXIProcessId = Common.CreateDBoxIProcessLogEntry("Employee Document Push to DBOX");
+
+
+            if (DBOXIProcessId == 0)
+            {
+                Common.LogAction("Error generating DBOXI Process ID");
+                return;
+            }
+
+
+            try
+            {
+               
+                string apikeyheader = ConfigurationManager.AppSettings["DBOXApiSettings.APIKeyHeader"].ToString();
+                string apikey = ConfigurationManager.AppSettings["DBOXApiSettings.APIKey"].ToString();
+
+                string clientId = ConfigurationManager.AppSettings["DBOXApiSettings.ClientId"].ToString();
+                string clientSecret = ConfigurationManager.AppSettings["DBOXApiSettings.ClientSecret"].ToString();
+
+
+                if (string.IsNullOrEmpty(clientId))
+                {
+                    throw new Exception("Cliend ID is missing.");
+                }
+                if (string.IsNullOrEmpty(clientSecret))
+                {
+                    throw new Exception("Client Secret missing.");
+                }
+
+
+                _httpClient = new HttpClient();
+                _apiClient = new ApiClient(_httpClient, apikey, apikeyheader);
+
+               
+
+                DataTable employeeList = GetEmployeeIdForDocumentExportToDBox();
+
+                if (employeeList == null || employeeList.Rows.Count == 0)
+                {
+                    Common.LogAction("No Employees found for document export.");
+                    return;
+                }
+
+                foreach (DataRow empRow in employeeList.Rows)
+                {
+                    int empId = Convert.ToInt32(empRow["EmpID"]);
+                    string empCode = empRow["EmpCode"].ToString();
+                    DataTable empdt = GetDocumentForExportToDBox(empId);
+
+                    if (empdt == null || empdt.Rows.Count == 0)
+                    {
+                        Common.LogAction("No documents found for Employee ID : " + empId);
+                        continue;
+                    }
+
+                    LogDBOXIExportData(empdt, DBOXIProcessId);
+
+                    EmployeePushModel employeesData = new EmployeePushModel();
+                    //employeesData.apiKey = apikey;
+                    //employeesData.importId = "employeesdata";
+                    //employeesData.groupCompany = "";
+
+                    List<EmployeePushDTO> empList = new List<EmployeePushDTO>();
+
+                    foreach (DataRow drow in empdt.Rows)
+                    {
+                        DocumentPushDTO document = ConvertToDocumentPushDto(drow);
+
+
+                        try
+                        {
+                        
+
+                            var response = _apiClient.PostEmployeeDocument(document);
+
+                            if (response == null)
+                            {
+                                hasProcessError = true;
+                                Common.LogAction("api response is null");
+                                Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, document.employee_no, "", "api response is null", true);
+                            }
+                            else
+                            {
+                                if (response.IsSuccessStatusCode)
+                                {
+
+                                    Common.LogAction("Posted " + document.employee_no);
+                                    Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, document.employee_no, "", "Posted Successfully", false);
+                                    Update_EmpDocumentLastExportDateTime(document.employee_no, empId.ToString());
+                                }
+                                else
+                                {
+                                    if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                                    {
+                                        hasProcessError = true;
+                                        Common.LogAction("Failure StatusCode " + ((int)response.StatusCode).ToString() + " bad request -Incorrect values.");
+                                        Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, document.employee_no, "", "Failure StatusCode " + ((int)response.StatusCode).ToString() + " bad request -Incorrect values.");
+                                    }
+                                    else if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+                                    {
+                                        hasProcessError = true;
+                                        Common.LogAction("Failure StatusCode " + ((int)response.StatusCode).ToString() + " forbidden request -Invalid 'dbox - api - secret'.");
+                                        Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, document.employee_no, "", "Failure StatusCode " + ((int)response.StatusCode).ToString() + " forbidden request -Invalid 'dbox - api - secret'.");
+                                    }
+                                    else if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                                    {
+                                        hasProcessError = true;
+                                        Common.LogAction("Failure StatusCode " + ((int)response.StatusCode).ToString() + " internal server error - location Code does not exist");
+                                        Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, document.employee_no, "", "Failure StatusCode " + ((int)response.StatusCode).ToString() + " internal server error - location Code does not exist.");
+                                    }
+                                    else
+                                    {
+                                        hasProcessError = true;
+                                        Common.LogAction("Failure StatusCode " + ((int)response.StatusCode).ToString());
+                                        Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, document.employee_no, "", "Failure StatusCode " + ((int)response.StatusCode).ToString());
+
+                                    }
+
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            hasProcessError = true;
+                            Common.LogAction("Error occured at Posting. Error:" + ex.Message);
+                            Common.LogException(ex);
+                        }
+                    }
+                }
+
+
+              
+
+               
+               
+
+
+            }
+            catch (Exception ex)
+            {
+                hasProcessError = true;
+                Common.LogAction("Error occured at Posting. Error:" + ex.Message);
+                Common.LogException(ex);
+                Common.UpdateRemarksToDBOXIExportProcessLogDetails(DBOXIProcessId, "", "", "Error occured at Posting. Error:" + ex.Message);
+            }
+
+
+            Common.LogUFIProcessCompletion(DBOXIProcessId, "Successfully pushed employee data", hasProcessError);
+
+        }
+
+
+        public DataTable GetDocumentForExportToDBox(int empId)
+        {
+            DataTable dtEmpUpload = new DataTable();
+
+
+          
+
+            string connStr = ConnectionFunctions.GetConnectionString();
+
+            using (SqlConnection conn = new SqlConnection(connStr))
+            using (SqlCommand cmd = new SqlCommand("dbo.GetEmployeeDocumentsExport", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@EmpID", empId);
+
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    conn.Open();
+                    da.Fill(dtEmpUpload);
+                }
+            }
+
+            return dtEmpUpload.Rows.Count > 0 ? dtEmpUpload : null;
+        }
+        public DataTable GetEmployeeIdForDocumentExportToDBox()
+        {
+            DataTable dtEmpUpload = new DataTable();
+            string ErrMsg = "";
+
+            string sql = @"
+                SELECT e.EmpId, e.EmpCode
+                FROM Employee e
+                INNER JOIN EmployeeSyncTracker_DBOXI t
+                    ON e.EmpID = t.EmpID
+                WHERE t.Employee_LastModifiedDateTime <> t.Employee_LASTPUSHEDDTTM
+            ";
+
+            bool RetVal = ConnectionFunctions.Connect_SQLDataTable(ref dtEmpUpload, sql, ref ErrMsg);
+            if (RetVal == false)
+            {
+                return null;
+            }
+
+            return dtEmpUpload;
         }
     }
 

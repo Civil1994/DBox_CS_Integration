@@ -685,10 +685,10 @@ namespace DBox_CS.Core.DALayer
 
         public static string GetConnectionString()
         {
-
+            string h="";
             //String str = System.Configuration.ConfigurationSettings.AppSettings["connect"];
 
-            String str = _connectionString;
+            String str = "81tDCFcur/lS2lxe0LoNzcx/jmXUaY3nk3Q2GDnJshjPjUiIKjehKXhw4IG/ksy2X0W0XeTr+25S5JvisblLo7BjnYqR+6eZez9mwJl8jvtoH65Ir72lP/agF3QIw2PuxBixcpsyzybjRmA0uBOMZdZ5v6/x0XtrHTJ3eiCiSNYYWE96r3GC7G6eBnHI3VevspjDTw3MAbSdk9zEtg3hhtkVKrg1dlJb";// _connectionString;
 
             str =
             str = cryptoutil.Decrypt(str);

@@ -66,4 +66,26 @@ namespace DBox_CS.Core.Models
         public string AuxLib5 { get; set; }
         public string AuxLib6 { get; set; }
     }
+
+
+    public class DocumentPushDTO
+    {
+        [DataMember(Name = "employee_no")]
+        public string employee_no { get; set; }
+
+        [DataMember(Name = "section")]
+        public string section { get; set; }
+
+        [DataMember(Name = "section_attribute")]
+        public string section_attribute { get; set; }
+
+        [DataMember(Name = "attachment")]
+        public string attachment { get; set; }
+
+        [DataMember(Name = "attachment_file_name")]
+        public string attachment_file_name { get; set; }
+
+        [DataMember(Name = "attachment_file_extension")]
+        public string attachment_file_extension { get; set; }
+    }
 }

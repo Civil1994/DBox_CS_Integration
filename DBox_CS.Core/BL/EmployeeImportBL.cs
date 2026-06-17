@@ -6148,7 +6148,7 @@ namespace DBox_CS.Core.BL
 
                         Common.UpdateErrorSeverityForService(ref ErrTable,1);
 
-                        RetVal = BusinessRules.CheckBusinessRule(1, dtEmployee, "Employee", "EmpCode", ErrTable, out Errors);
+                        //RetVal = BusinessRules.CheckBusinessRule(1, dtEmployee, "Employee", "EmpCode", ErrTable, out Errors);
 
                         //if (RetVal == false)
                         //{
@@ -6158,15 +6158,15 @@ namespace DBox_CS.Core.BL
                         //}
 
                         Int16 Ctr1 = 0;
-                        if (Errors.Count > 0)
-                        {
-                            string[] arCodes;
-                            arCodes = Errors[StrEmpCode.ToString()].ToString().Split('@');
-                            for (Ctr1 = 0; Ctr1 <= arCodes.Length - 1; Ctr1++)
-                            {
-                                Codes = Codes + "'" + arCodes.GetValue(Ctr1) + "',";
-                            }
-                        }
+                        //if (Errors.Count > 0)
+                        //{
+                        //    string[] arCodes;
+                        //    arCodes = Errors[StrEmpCode.ToString()].ToString().Split('@');
+                        //    for (Ctr1 = 0; Ctr1 <= arCodes.Length - 1; Ctr1++)
+                        //    {
+                        //        Codes = Codes + "'" + arCodes.GetValue(Ctr1) + "',";
+                        //    }
+                        //}
                         if (Codes.Trim().Length != 0)
                         {
                             DataView dvErrors = new DataView(ErrTable);
@@ -9565,10 +9565,10 @@ namespace DBox_CS.Core.BL
                     }
                     break;
                 case xlcol_AuxLib3:
-                    if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
-                    {
-                        isValid = false; break;
-                    }
+                    //if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
+                    //{
+                    //    isValid = false; break;
+                    //}
                     break;
                 case xlcol_AuxLib4:
                     if (!ValidateLookUp(dtLookUpFieldsDetails_Emp, FieldName, Value, ref fieldErr, ref LookUpCode))
