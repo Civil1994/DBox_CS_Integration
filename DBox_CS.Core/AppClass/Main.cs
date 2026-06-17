@@ -136,13 +136,13 @@ namespace DBox_CS.Core.AppClass
             }
         }
 
-        public void SaveEmployeeExit(EmpExitInboundModel empExitModel,bool Issponsorchange= false, string Passcpy1 = "", string passcpy2 = "")
+        public void SaveEmployeeExit(EmpExitInboundModel empExitModel,bool Issponsorchange= false, string wbPhoto = "", string Rescopy = "")
         {
             try
             {
                 Common.LogAction($"Dbox Exit Integration started.");
                 ExitMethods exitModel = new ExitMethods();
-                exitModel.PostEmployeeExit(empExitModel, Issponsorchange, Passcpy1, passcpy2);
+                exitModel.PostEmployeeExit(empExitModel, Issponsorchange);
 
                 Common.LogAction($"Dbox Exit Integration Completed.");
             }
@@ -294,10 +294,10 @@ namespace DBox_CS.Core.AppClass
                         EmployeeCurrentLocation = "InsideUAE", // if available
                         ReasonofCancellation = "Resignation",
                         EmployeeHasFamilySponsored = spchangemodel.EmployeeHasFamilySponsored,
-                        doc_WBPhoto = spchangemodel.Doc_WBPhoto, // if available
-                        doc_Res = spchangemodel.Doc_Res // if available
+                        coloured_passport_copy_page_1 = spchangemodel.Doc_PassCpy1, // if available
+                        coloured_passport_copy_page_2 = spchangemodel.Doc_PassCpy2 // if available
                     };
-                    SaveEmployeeExit(exitModel,true, spchangemodel.Doc_PassCpy1, spchangemodel.Doc_PassCpy2);
+                    SaveEmployeeExit(exitModel,true, spchangemodel.Doc_WBPhoto, spchangemodel.Doc_Res);
                 }
                 if (dboxiProcessId != 0)
                 {

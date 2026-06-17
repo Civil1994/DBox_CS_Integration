@@ -30,23 +30,41 @@ namespace DBox_CS.Core.Models
         [DataMember(Name = "EmployeeHasFamilySponsored")]
         public string EmployeeHasFamilySponsored { get; set; }
 
-        [DataMember(Name = "doc_WBPhoto")]
-        public string doc_WBPhoto { get; set; }
+        [DataMember(Name = "coloured_passport_copy_page_1")]
+        public string coloured_passport_copy_page_1 { get; set; }
 
-        [DataMember(Name = "doc_Res")]
-        public string doc_Res { get; set; }
+        [DataMember(Name = "coloured_passport_copy_page_2")]
+        public string coloured_passport_copy_page_2 { get; set; }
     }
 
     public class ExitMethods
     {
 
-        public void PostEmployeeExit(EmpExitInboundModel exitObj, bool Issponsorchange=false,string Passcpy1="",string passcpy2="")
+        public void PostEmployeeExit(EmpExitInboundModel exitObj, bool Issponsorchange=false,string wbPhoto="",string ResCopy="")
         {
             int processId = 0, processdetailsId = 0;
             try
             {
                 Common.LogAction($"Dbox Exit Integration PostEmployeeExit started.");
                 string errMsg = "";
+
+                string reason = exitObj.ReasonofCancellation;
+             
+
+                if (reason.Equals("Involuntary", StringComparison.OrdinalIgnoreCase))
+                {
+                    exitObj.ReasonofCancellation = "termination";
+                   
+                }
+                else if (reason.Equals("Voluntary", StringComparison.OrdinalIgnoreCase) ||
+                         reason.Equals("Retired", StringComparison.OrdinalIgnoreCase) ||
+                         reason.Equals("Death", StringComparison.OrdinalIgnoreCase))
+                {
+                    exitObj.ReasonofCancellation = "Resignation";
+                  
+                }
+                
+
                 string qry = @"INSERT INTO DBOXIProcessLog (ProcessName, StartTime, EndTime, HasErrors, Remarks) VALUES ('Exit Employee from DBox', GETDATE(), NULL, 0, 'Exit Process Started');SELECT SCOPE_IDENTITY();";
                 bool procres = ConnectionFunctions.Connect_SQLInsertWithID(ref processId, qry, ref errMsg);
 
@@ -384,7 +402,7 @@ namespace DBox_CS.Core.Models
 
                             IDEosType = InsertLibrary(ID47, "EosType");
                             IDYesNo = InsertLibrary(ID114, "YESNO");
-
+                            
                             // ✅ 7. Library Answers
                             cmd.CommandText = @"
                             INSERT INTO AuthorityServiceRequestQuestionLibraryAnswer
@@ -446,26 +464,27 @@ namespace DBox_CS.Core.Models
 
                             // ✅ 8. Save Document
 
-                            string wbContentType;
-                            byte[] wbBytes = ConvertBase64ToBytes(exitObj.doc_WBPhoto, out wbContentType);
+                            string ppContentType1;
+                            byte[] ppBytes1 = ConvertBase64ToBytes(exitObj.coloured_passport_copy_page_1, out ppContentType1);
 
-                            string resContentType;
-                            byte[] resBytes = ConvertBase64ToBytes(exitObj.doc_Res, out resContentType);
+                            string ppContentType2;
+                            byte[] ppBytes2 = ConvertBase64ToBytes(exitObj.coloured_passport_copy_page_2, out ppContentType2);
 
-                            SaveExitDocument(conn, tran, EmpId, newReqID, "31", wbBytes, "WBPhoto", wbContentType);
+                            SaveExitDocument(conn, tran, EmpId, newReqID, "29", ppBytes1, "ColorPassPortCpy1", ppContentType1);
 
-                            SaveExitDocument(conn, tran, EmpId, newReqID, "RSV", resBytes, "Resignation", resContentType);
+                            SaveExitDocument(conn, tran, EmpId, newReqID, "30", ppBytes2, "ColorPassPortCpy2", ppContentType2);
                             if (Issponsorchange == true)
                             {
-                                string ppContentType1;
-                                byte[] ppBytes1 = ConvertBase64ToBytes(exitObj.doc_WBPhoto, out ppContentType1);
+                                string wbContentType;
+                                byte[] wbBytes = ConvertBase64ToBytes(wbPhoto, out wbContentType);
 
-                                string ppContentType2;
-                                byte[] ppBytes2 = ConvertBase64ToBytes(exitObj.doc_Res, out ppContentType2);
+                                string resContentType;
+                                byte[] resBytes = ConvertBase64ToBytes(ResCopy, out resContentType);
 
-                                SaveExitDocument(conn, tran, EmpId, newReqID, "29", ppBytes1, "PassPortCpy1", ppContentType1);
+                                SaveExitDocument(conn, tran, EmpId, newReqID, "31", wbBytes, "WBPhoto", wbContentType);
 
-                                SaveExitDocument(conn, tran, EmpId, newReqID, "30", ppBytes2, "PassPortCpy2", ppContentType2);
+                                SaveExitDocument(conn, tran, EmpId, newReqID, "RSV", resBytes, "Resignation", resContentType);
+                               
                             }
 
                             // ✅ 9. Final Audit (Edit)
@@ -580,8 +599,8 @@ namespace DBox_CS.Core.Models
                 new SqlParameter("@CurrentLocation", exitObj.EmployeeCurrentLocation ?? (object)DBNull.Value),
                 new SqlParameter("@ReasonofCancellation", exitObj.ReasonofCancellation ?? (object)DBNull.Value),
                 new SqlParameter("@EmployeeHasFamilySponsored", exitObj.EmployeeHasFamilySponsored ?? (object)DBNull.Value),
-                new SqlParameter("@DocPass1", exitObj.doc_WBPhoto ?? (object)DBNull.Value),
-                new SqlParameter("@DocPass2", exitObj.doc_Res ?? (object)DBNull.Value)
+                new SqlParameter("@DocPass1", exitObj.coloured_passport_copy_page_1 ?? (object)DBNull.Value),
+                new SqlParameter("@DocPass2", exitObj.coloured_passport_copy_page_2 ?? (object)DBNull.Value)
             };
 
             ConnectionFunctions.Connect_SQLNonQuery(ref result, qry, ref errMsg, param);
@@ -706,6 +725,20 @@ namespace DBox_CS.Core.Models
 
                 cmdDoc.Parameters.Clear();
                 cmdDoc.Parameters.AddWithValue("@AuthDocID", authDocId);   
+                cmdDoc.Parameters.AddWithValue("@DocID", 0);
+                cmdDoc.Parameters.AddWithValue("@Name", fileName);
+                cmdDoc.Parameters.AddWithValue("@Type", contentType);
+                cmdDoc.Parameters.AddWithValue("@Data", fileData);
+
+                cmdDoc.ExecuteNonQuery();
+
+                cmdDoc.CommandText = @"
+            INSERT INTO DocumentExp
+            (AuthSerReqtDocID, DocID, DocumentName, ContentType, Datas)
+            VALUES (@AuthDocID, @DocID, @Name, @Type, @Data)";
+
+                cmdDoc.Parameters.Clear();
+                cmdDoc.Parameters.AddWithValue("@AuthDocID", authDocId);
                 cmdDoc.Parameters.AddWithValue("@DocID", 0);
                 cmdDoc.Parameters.AddWithValue("@Name", fileName);
                 cmdDoc.Parameters.AddWithValue("@Type", contentType);
