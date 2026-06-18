@@ -732,17 +732,52 @@ namespace DBox_CS.Core.Models
 
                 cmdDoc.ExecuteNonQuery();
 
-                cmdDoc.CommandText = @"
-            INSERT INTO DocumentExp
-            (AuthSerReqtDocID, DocID, DocumentName, ContentType, Datas)
-            VALUES (@AuthDocID, @DocID, @Name, @Type, @Data)";
+                string locLib5 = null;
+                string salProfile = null;
+
+                cmdDoc.CommandText = @"SELECT LocLib5, SalProfile FROM Employee WHERE EmpID = @EmpID";
+                cmdDoc.Parameters.Clear();
+                cmdDoc.Parameters.AddWithValue("@EmpID", empId);
+
+                using (SqlDataReader dr = cmdDoc.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        locLib5 = dr["LocLib5"] == DBNull.Value ? null : dr["LocLib5"].ToString();
+                        salProfile = dr["SalProfile"] == DBNull.Value ? null : dr["SalProfile"].ToString();
+                    }
+                }
+                cmdDoc.CommandText = @"UPDATE DocumentExp
+                       SET ActiveStatus = 35,Status = 35,LastModDateTime = GETDATE()
+                       WHERE EmpID = @EmpID AND DocType = @DocType AND ActiveStatus = 20";
 
                 cmdDoc.Parameters.Clear();
-                cmdDoc.Parameters.AddWithValue("@AuthDocID", authDocId);
-                cmdDoc.Parameters.AddWithValue("@DocID", 0);
-                cmdDoc.Parameters.AddWithValue("@Name", fileName);
-                cmdDoc.Parameters.AddWithValue("@Type", contentType);
-                cmdDoc.Parameters.AddWithValue("@Data", fileData);
+                cmdDoc.Parameters.AddWithValue("@EmpID", empId);
+                cmdDoc.Parameters.AddWithValue("@DocType", docCode);
+
+                cmdDoc.ExecuteNonQuery();
+
+                cmdDoc.CommandText = @"INSERT INTO DocumentExp 
+            (ReqNo, DocType, EmpID, ReqDate, LastModDateTime, ActiveStatus, Status, LocLib5, SalProfile, ReqID, CreateDate, ViewNo, UploadCount) 
+            VALUES (@ReqNo, @DocType, @EmpID, GETDATE(), GETDATE(), @ActiveStatus, @Status, @LocLib5, @SalProfile,
+            @ReqID, GETDATE(), @ViewNo, @UploadCount)";
+
+                cmdDoc.Parameters.Clear();
+
+                cmdDoc.Parameters.AddWithValue("@ReqNo", reqId); // or actual ReqNo
+                cmdDoc.Parameters.AddWithValue("@DocType", docCode);
+                cmdDoc.Parameters.AddWithValue("@EmpID", empId);
+
+                cmdDoc.Parameters.AddWithValue("@ActiveStatus", 20);
+                cmdDoc.Parameters.AddWithValue("@Status", 20);
+
+                cmdDoc.Parameters.AddWithValue("@LocLib5", locLib5);      // if unknown
+                cmdDoc.Parameters.AddWithValue("@SalProfile", salProfile);   // if unknown
+
+                cmdDoc.Parameters.AddWithValue("@ReqID", 1);
+
+                cmdDoc.Parameters.AddWithValue("@ViewNo", 1);
+                cmdDoc.Parameters.AddWithValue("@UploadCount", 1);
 
                 cmdDoc.ExecuteNonQuery();
             }
@@ -820,5 +855,6 @@ namespace DBox_CS.Core.Models
                 }
             }
         }
+   
     }
 }
